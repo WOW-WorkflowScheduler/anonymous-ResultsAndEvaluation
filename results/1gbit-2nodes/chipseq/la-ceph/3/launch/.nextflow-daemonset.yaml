@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  labels: {app: nextflow}
+  name: mount-lonely-stallman
+  namespace: anonymized
+spec:
+  restartPolicy: Always
+  template:
+    metadata:
+      labels: {name: mount-lonely-stallman, app: nextflow}
+    spec:
+      containers:
+      - name: mount-lonely-stallman
+        image: anonymized/test1:ftp_v122
+        volumeMounts:
+        - {name: vol-1, mountPath: /localdata}
+        - {name: vol-2, mountPath: /input}
+        imagePullPolicy: IfNotPresent
+      volumes:
+      - name: vol-1
+        hostPath: {path: /localdata}
+      - name: vol-2
+        persistentVolumeClaim: {claimName: ceph-data}
+      serviceAccount: nextflow
+      nodeSelector: {usedby: anonymized}
+  selector:
+    matchLabels: {name: mount-lonely-stallman}

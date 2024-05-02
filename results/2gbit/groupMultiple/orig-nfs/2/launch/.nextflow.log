@@ -1,0 +1,464 @@
+Dec-05 03:36:32.579 [main] DEBUG nextflow.cli.Launcher - $> nextflow run /input/groupMultiple -c /experiments/experiment/groupMultiple/nextflow.config -c /experiments/experiment/nextflow_orig.config -c /experiments/experiment/nextflow_nfs.config
+Dec-05 03:36:32.639 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.07.0-edge
+Dec-05 03:36:32.660 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/.nextflow/plugins; core-plugins: nf-amazon@2.1.0,nf-azure@1.1.4,nf-cloudcache@0.1.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.1,nf-tower@1.5.15,nf-wave@0.11.0
+Dec-05 03:36:32.669 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Dec-05 03:36:32.670 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Dec-05 03:36:32.672 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Dec-05 03:36:32.680 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Dec-05 03:36:32.698 [main] DEBUG nextflow.scm.AssetManager - Project manifest does not exist: /input/groupMultiple/nextflow.config (No such file or directory)
+Dec-05 03:36:32.724 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /experiments/experiment/groupMultiple/nextflow.config
+Dec-05 03:36:32.725 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /experiments/experiment/nextflow_orig.config
+Dec-05 03:36:32.725 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /experiments/experiment/nextflow_nfs.config
+Dec-05 03:36:32.726 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /experiments/experiment/groupMultiple/nextflow.config
+Dec-05 03:36:32.726 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /experiments/experiment/nextflow_orig.config
+Dec-05 03:36:32.726 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /experiments/experiment/nextflow_nfs.config
+Dec-05 03:36:32.741 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Dec-05 03:36:33.235 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Dec-05 03:36:33.382 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Dec-05 03:36:33.407 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Dec-05 03:36:33.420 [main] INFO  nextflow.cli.CmdRun - Launching `/input/groupMultiple/main.nf` [grave_planck] DSL2 - revision: b7ed08cdab
+Dec-05 03:36:33.420 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Dec-05 03:36:33.420 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Dec-05 03:36:33.427 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /.nextflow/secrets/store.json
+Dec-05 03:36:33.429 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@44065156] - activable => nextflow.secret.LocalSecretsProvider@44065156
+Dec-05 03:36:33.477 [main] DEBUG nextflow.Session - Session UUID: e552315e-8c3d-4f5c-b188-a29faa3907b8
+Dec-05 03:36:33.477 [main] DEBUG nextflow.Session - Run name: grave_planck
+Dec-05 03:36:33.478 [main] DEBUG nextflow.Session - Executor pool size: 32
+Dec-05 03:36:33.483 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Dec-05 03:36:33.486 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=96; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Dec-05 03:36:33.517 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.07.0-edge build 5870
+  Created: 22-07-2023 15:44 UTC 
+  System: Linux 5.4.0-166-generic
+  Runtime: Groovy 3.0.18 on OpenJDK 64-Bit Server VM 17.0.7+7-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 1648763@nextflow [10.233.76.15]
+  CPUs: 32 - Mem: 125.7 GB (121.2 GB) - Swap: 0 (0)
+Dec-05 03:36:33.562 [main] DEBUG nextflow.Session - Work-dir: /input/data/work [nfs]
+Dec-05 03:36:33.562 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /input/groupMultiple/bin
+Dec-05 03:36:33.569 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Dec-05 03:36:33.576 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Dec-05 03:36:33.605 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Dec-05 03:36:33.611 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 33; maxThreads: 1000
+Dec-05 03:36:33.700 [main] DEBUG nextflow.Session - Session start
+Dec-05 03:36:33.705 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /input/data/output/trace.csv
+Dec-05 03:36:33.915 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Dec-05 03:36:34.130 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:writeLargeFile` matches process writeLargeFile
+Dec-05 03:36:34.146 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: k8s
+Dec-05 03:36:34.146 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'k8s'
+Dec-05 03:36:34.152 [main] DEBUG nextflow.executor.Executor - [warm up] executor > k8s
+Dec-05 03:36:34.156 [main] DEBUG n.processor.TaskPollingMonitor - Creating task monitor for executor 'k8s' > capacity: 300; pollInterval: 5s; dumpInterval: 5m 
+Dec-05 03:36:34.170 [main] DEBUG nextflow.k8s.client.ConfigDiscovery - K8s config file does not exist: /root/.kube/config
+Dec-05 03:36:34.181 [main] DEBUG nextflow.k8s.K8sExecutor - [K8s] config=[debug:[yaml:true], namespace:anonymized, serviceAccount:nextflow, workDir:/input/data/work/, projectDir:/input/data/project/, imagePullPolicy:IfNotPresent, launchDir:/input/data/launch/, runAsUser:0, fetchNodeName:true, storageMountPath:/input, scheduler:[name:workflow-scheduler, autoClose:false, nodeSelector:usedby=anonymized, container:anonymized/test1:sch_v194], pod:[nodeSelector:usedby=anonymized], storage:[nodeSelector:usedby=anonymized, imageName:anonymized/test1:ftp_v122], storageClaimName:nfs-experiment]; API client config=ClientConfig[ server=10.233.0.1:443, namespace=anonymized, serviceAccount=nextflow, token=eyJhbGciOiJ.., sslCert=LS0tLS1CRUd.., clientCert=-, clientKey=-, verifySsl=false, fromFile=true, httpReadTimeout=null, httpConnectTimeout=null, maxErrorRetry=4 ]
+Dec-05 03:36:34.263 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:combineFiles` matches process combineFilesA
+Dec-05 03:36:34.264 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: k8s
+Dec-05 03:36:34.264 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'k8s'
+Dec-05 03:36:34.270 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:combineFiles` matches process combineFilesB
+Dec-05 03:36:34.271 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: k8s
+Dec-05 03:36:34.271 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'k8s'
+Dec-05 03:36:34.279 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: revertFile, combineFiles, combineFilesA, writeLargeFile, combineFilesB
+Dec-05 03:36:34.281 [main] DEBUG nextflow.Session - Igniting dataflow network (4)
+Dec-05 03:36:34.282 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > writeLargeFile
+Dec-05 03:36:34.283 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > combineFilesA
+Dec-05 03:36:34.284 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > combineFilesB
+Dec-05 03:36:34.284 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Dec-05 03:36:34.284 [main] DEBUG nextflow.Session - Session await
+Dec-05 03:36:34.797 [Task submitter] INFO  nextflow.Session - [e7/5d555d] Submitted process > writeLargeFile (1)
+Dec-05 03:36:34.917 [Task submitter] INFO  nextflow.Session - [09/9c2ef7] Submitted process > writeLargeFile (15)
+Dec-05 03:36:35.033 [Task submitter] INFO  nextflow.Session - [71/bd8a48] Submitted process > writeLargeFile (14)
+Dec-05 03:36:35.155 [Task submitter] INFO  nextflow.Session - [3c/4a5138] Submitted process > writeLargeFile (27)
+Dec-05 03:36:35.270 [Task submitter] INFO  nextflow.Session - [15/0eb43a] Submitted process > writeLargeFile (6)
+Dec-05 03:36:35.382 [Task submitter] INFO  nextflow.Session - [1c/22a2c3] Submitted process > writeLargeFile (29)
+Dec-05 03:36:35.495 [Task submitter] INFO  nextflow.Session - [c5/ab3255] Submitted process > writeLargeFile (16)
+Dec-05 03:36:35.604 [Task submitter] INFO  nextflow.Session - [4c/04e6d6] Submitted process > writeLargeFile (30)
+Dec-05 03:36:35.681 [Task submitter] INFO  nextflow.Session - [67/2fdd61] Submitted process > writeLargeFile (9)
+Dec-05 03:36:35.773 [Task submitter] INFO  nextflow.Session - [af/3118e1] Submitted process > writeLargeFile (5)
+Dec-05 03:36:35.855 [Task submitter] INFO  nextflow.Session - [d3/d1fd58] Submitted process > writeLargeFile (17)
+Dec-05 03:36:35.930 [Task submitter] INFO  nextflow.Session - [2f/51ccb1] Submitted process > writeLargeFile (12)
+Dec-05 03:36:36.015 [Task submitter] INFO  nextflow.Session - [c2/ea3b34] Submitted process > writeLargeFile (23)
+Dec-05 03:36:36.097 [Task submitter] INFO  nextflow.Session - [91/e03d90] Submitted process > writeLargeFile (20)
+Dec-05 03:36:36.169 [Task submitter] INFO  nextflow.Session - [72/5f4d51] Submitted process > writeLargeFile (21)
+Dec-05 03:36:36.259 [Task submitter] INFO  nextflow.Session - [cf/878e14] Submitted process > writeLargeFile (13)
+Dec-05 03:36:36.348 [Task submitter] INFO  nextflow.Session - [e2/29e66a] Submitted process > writeLargeFile (3)
+Dec-05 03:36:36.423 [Task submitter] INFO  nextflow.Session - [99/8b2470] Submitted process > writeLargeFile (24)
+Dec-05 03:36:36.510 [Task submitter] INFO  nextflow.Session - [de/4bba6e] Submitted process > writeLargeFile (10)
+Dec-05 03:36:36.596 [Task submitter] INFO  nextflow.Session - [4a/9974e7] Submitted process > writeLargeFile (11)
+Dec-05 03:36:36.667 [Task submitter] INFO  nextflow.Session - [12/edb04c] Submitted process > writeLargeFile (31)
+Dec-05 03:36:36.759 [Task submitter] INFO  nextflow.Session - [e1/973e05] Submitted process > writeLargeFile (26)
+Dec-05 03:36:36.860 [Task submitter] INFO  nextflow.Session - [eb/7e7a37] Submitted process > writeLargeFile (19)
+Dec-05 03:36:36.953 [Task submitter] INFO  nextflow.Session - [d0/59d55f] Submitted process > writeLargeFile (4)
+Dec-05 03:36:37.029 [Task submitter] INFO  nextflow.Session - [49/b501f9] Submitted process > writeLargeFile (32)
+Dec-05 03:36:37.115 [Task submitter] INFO  nextflow.Session - [c5/c02ce3] Submitted process > writeLargeFile (56)
+Dec-05 03:36:37.191 [Task submitter] INFO  nextflow.Session - [91/435a19] Submitted process > writeLargeFile (57)
+Dec-05 03:36:37.296 [Task submitter] INFO  nextflow.Session - [dc/dad3d0] Submitted process > writeLargeFile (18)
+Dec-05 03:36:37.384 [Task submitter] INFO  nextflow.Session - [72/d08713] Submitted process > writeLargeFile (60)
+Dec-05 03:36:37.475 [Task submitter] INFO  nextflow.Session - [fc/143546] Submitted process > writeLargeFile (8)
+Dec-05 03:36:37.576 [Task submitter] INFO  nextflow.Session - [5b/998de3] Submitted process > writeLargeFile (28)
+Dec-05 03:36:37.702 [Task submitter] INFO  nextflow.Session - [d3/1b6a9c] Submitted process > writeLargeFile (61)
+Dec-05 03:36:37.759 [Task submitter] INFO  nextflow.Session - [2a/90b7f4] Submitted process > writeLargeFile (7)
+Dec-05 03:36:37.863 [Task submitter] INFO  nextflow.Session - [ae/1f2a1e] Submitted process > writeLargeFile (25)
+Dec-05 03:36:38.515 [Task submitter] INFO  nextflow.Session - [87/906b51] Submitted process > writeLargeFile (2)
+Dec-05 03:36:39.768 [Task submitter] INFO  nextflow.Session - [99/2bc1b4] Submitted process > writeLargeFile (67)
+Dec-05 03:36:39.992 [Task monitor] WARN  nextflow.k8s.client.K8sClient - K8s pod cannot be scheduled -- 0/8 nodes are available: 8 Insufficient cpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod..
+Dec-05 03:36:41.190 [Task submitter] INFO  nextflow.Session - [9a/a04abd] Submitted process > writeLargeFile (22)
+Dec-05 03:36:43.787 [Task submitter] INFO  nextflow.Session - [f3/1c27ae] Submitted process > writeLargeFile (36)
+Dec-05 03:36:46.658 [Task submitter] INFO  nextflow.Session - [ec/575054] Submitted process > writeLargeFile (33)
+Dec-05 03:36:49.493 [Task submitter] INFO  nextflow.Session - [05/aa12ff] Submitted process > writeLargeFile (34)
+Dec-05 03:36:52.680 [Task submitter] INFO  nextflow.Session - [af/e05718] Submitted process > writeLargeFile (72)
+Dec-05 03:36:55.914 [Task submitter] INFO  nextflow.Session - [07/b60478] Submitted process > writeLargeFile (44)
+Dec-05 03:36:59.571 [Task submitter] INFO  nextflow.Session - [70/529bcc] Submitted process > writeLargeFile (37)
+Dec-05 03:37:03.074 [Task submitter] INFO  nextflow.Session - [0a/a86028] Submitted process > writeLargeFile (41)
+Dec-05 03:37:06.780 [Task submitter] INFO  nextflow.Session - [64/c9a659] Submitted process > writeLargeFile (43)
+Dec-05 03:37:10.652 [Task submitter] INFO  nextflow.Session - [e1/be5420] Submitted process > writeLargeFile (77)
+Dec-05 03:37:15.334 [Task submitter] INFO  nextflow.Session - [84/f3a11a] Submitted process > writeLargeFile (39)
+Dec-05 03:37:18.736 [Task submitter] INFO  nextflow.Session - [84/e8558e] Submitted process > writeLargeFile (63)
+Dec-05 03:37:22.497 [Task submitter] INFO  nextflow.Session - [8c/feb42b] Submitted process > writeLargeFile (40)
+Dec-05 03:37:26.084 [Task submitter] INFO  nextflow.Session - [75/4128e4] Submitted process > writeLargeFile (35)
+Dec-05 03:37:29.388 [Task submitter] INFO  nextflow.Session - [91/06af7a] Submitted process > writeLargeFile (82)
+Dec-05 03:37:32.753 [Task submitter] INFO  nextflow.Session - [e6/c286d4] Submitted process > writeLargeFile (55)
+Dec-05 03:37:36.433 [Task submitter] INFO  nextflow.Session - [ec/09661c] Submitted process > writeLargeFile (84)
+Dec-05 03:37:40.002 [Task monitor] WARN  nextflow.k8s.client.K8sClient - K8s pod cannot be scheduled -- 0/8 nodes are available: 8 Insufficient cpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod..
+Dec-05 03:37:40.601 [Task submitter] INFO  nextflow.Session - [da/635939] Submitted process > writeLargeFile (45)
+Dec-05 03:37:44.308 [Task submitter] INFO  nextflow.Session - [56/c3dd33] Submitted process > writeLargeFile (46)
+Dec-05 03:37:47.854 [Task submitter] INFO  nextflow.Session - [75/fc57f2] Submitted process > writeLargeFile (86)
+Dec-05 03:37:51.388 [Task submitter] INFO  nextflow.Session - [72/68d681] Submitted process > writeLargeFile (87)
+Dec-05 03:37:54.334 [Task submitter] INFO  nextflow.Session - [0d/e860d5] Submitted process > writeLargeFile (51)
+Dec-05 03:37:57.278 [Task submitter] INFO  nextflow.Session - [87/307eb3] Submitted process > writeLargeFile (89)
+Dec-05 03:38:00.211 [Task submitter] INFO  nextflow.Session - [42/ca479e] Submitted process > writeLargeFile (49)
+Dec-05 03:38:00.756 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 20; name: writeLargeFile (20); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/91/e03d90662707de7989eed5bffda21e]
+Dec-05 03:38:02.734 [Task submitter] INFO  nextflow.Session - [37/e5d65f] Submitted process > writeLargeFile (58)
+Dec-05 03:38:03.803 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 19; name: writeLargeFile (19); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/eb/7e7a3760eab24a22727088ba6073b3]
+Dec-05 03:38:05.138 [Task submitter] INFO  nextflow.Session - [91/55486b] Submitted process > writeLargeFile (93)
+Dec-05 03:38:07.193 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 27; name: writeLargeFile (27); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/3c/4a5138657601bb0028b90456e5f89c]
+Dec-05 03:38:07.452 [Task submitter] INFO  nextflow.Session - [82/323f90] Submitted process > writeLargeFile (54)
+Dec-05 03:38:09.195 [Task submitter] INFO  nextflow.Session - [7f/f4a261] Submitted process > writeLargeFile (38)
+Dec-05 03:38:10.229 [Task submitter] INFO  nextflow.Session - [a6/dab4c5] Submitted process > writeLargeFile (65)
+Dec-05 03:38:11.242 [Task submitter] INFO  nextflow.Session - [44/93933d] Submitted process > writeLargeFile (47)
+Dec-05 03:38:11.576 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 29; name: writeLargeFile (29); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/1c/22a2c31b5a0e080bbb4c48789e14c0]
+Dec-05 03:38:12.157 [Task submitter] INFO  nextflow.Session - [d7/8dcf0a] Submitted process > writeLargeFile (62)
+Dec-05 03:38:12.469 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 23; name: writeLargeFile (23); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/c2/ea3b34eb0db319051aeaccc6031349]
+Dec-05 03:38:12.916 [Task submitter] INFO  nextflow.Session - [db/b315c7] Submitted process > writeLargeFile (48)
+Dec-05 03:38:12.948 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 21; name: writeLargeFile (21); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/72/5f4d515ec8e2c5cd710e645dc0f96e]
+Dec-05 03:38:13.553 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 13; name: writeLargeFile (13); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/cf/878e1496dd0b8607d6654d40fccee1]
+Dec-05 03:38:13.669 [Task submitter] INFO  nextflow.Session - [ef/597e1b] Submitted process > writeLargeFile (50)
+Dec-05 03:38:14.129 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: writeLargeFile (11); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/4a/9974e76d397490e7799c646ca6eadf]
+Dec-05 03:38:14.161 [Task submitter] INFO  nextflow.Session - [c1/8946b0] Submitted process > writeLargeFile (42)
+Dec-05 03:38:14.451 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 26; name: writeLargeFile (26); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/e1/973e05f7288ed01d9d96b9ad1cf07e]
+Dec-05 03:38:14.641 [Task submitter] INFO  nextflow.Session - [a7/c70706] Submitted process > writeLargeFile (59)
+Dec-05 03:38:14.790 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: writeLargeFile (4); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/d0/59d55f6d3a5d58dcb267bead4612f6]
+Dec-05 03:38:15.013 [Task submitter] INFO  nextflow.Session - [b5/dbc38d] Submitted process > writeLargeFile (64)
+Dec-05 03:38:15.364 [Task submitter] INFO  nextflow.Session - [bc/dc18aa] Submitted process > writeLargeFile (66)
+Dec-05 03:38:15.708 [Task submitter] INFO  nextflow.Session - [94/7c06fd] Submitted process > writeLargeFile (53)
+Dec-05 03:38:16.026 [Task submitter] INFO  nextflow.Session - [0d/0e46ba] Submitted process > writeLargeFile (68)
+Dec-05 03:38:16.289 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: writeLargeFile (1); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/e7/5d555d221d368874f94553730689f2]
+Dec-05 03:38:16.433 [Task submitter] INFO  nextflow.Session - [c0/46f741] Submitted process > writeLargeFile (52)
+Dec-05 03:38:16.704 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 15; name: writeLargeFile (15); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/09/9c2ef781ca1c44e6f193e797b14a14]
+Dec-05 03:38:16.857 [Task submitter] INFO  nextflow.Session - [c1/a83d71] Submitted process > writeLargeFile (69)
+Dec-05 03:38:17.218 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: writeLargeFile (6); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/15/0eb43a07848381ad263b871beb750d]
+Dec-05 03:38:17.315 [Task submitter] INFO  nextflow.Session - [c0/ff120c] Submitted process > writeLargeFile (91)
+Dec-05 03:38:17.549 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 16; name: writeLargeFile (16); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/c5/ab325526cdd0c9ff5ed12e1fc86f03]
+Dec-05 03:38:17.677 [Task submitter] INFO  nextflow.Session - [6a/fc84df] Submitted process > writeLargeFile (90)
+Dec-05 03:38:17.889 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 30; name: writeLargeFile (30); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/4c/04e6d69669e7afe4d25c7e5a61242c]
+Dec-05 03:38:18.093 [Task submitter] INFO  nextflow.Session - [77/971ea3] Submitted process > writeLargeFile (80)
+Dec-05 03:38:19.270 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: writeLargeFile (9); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/67/2fdd61d6e7f4843150f10476f70370]
+Dec-05 03:38:20.007 [Task submitter] INFO  nextflow.Session - [3d/9838c7] Submitted process > writeLargeFile (88)
+Dec-05 03:38:22.562 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: writeLargeFile (5); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/af/3118e1e907b1eedfc350416d9f18b3]
+Dec-05 03:38:23.611 [Task submitter] INFO  nextflow.Session - [88/41647f] Submitted process > writeLargeFile (92)
+Dec-05 03:38:27.352 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 17; name: writeLargeFile (17); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/d3/d1fd58cdc16f1731ecdfe7afecc006]
+Dec-05 03:38:28.044 [Task submitter] INFO  nextflow.Session - [fe/4aecf4] Submitted process > writeLargeFile (78)
+Dec-05 03:38:32.706 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 12; name: writeLargeFile (12); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/2f/51ccb148cf9cc36e23f13d8733fcbe]
+Dec-05 03:38:32.890 [Task submitter] INFO  nextflow.Session - [c8/3ce76a] Submitted process > writeLargeFile (85)
+Dec-05 03:38:37.357 [Task submitter] INFO  nextflow.Session - [47/2c6e34] Submitted process > writeLargeFile (76)
+Dec-05 03:38:37.544 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: writeLargeFile (3); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/e2/29e66a6e21ac7e41a9f31dbac36bb0]
+Dec-05 03:38:41.301 [Task submitter] INFO  nextflow.Session - [68/935821] Submitted process > writeLargeFile (96)
+Dec-05 03:38:41.786 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 24; name: writeLargeFile (24); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/99/8b24708869bbedd6886f6532602a9c]
+Dec-05 03:38:44.966 [Task submitter] INFO  nextflow.Session - [be/09df69] Submitted process > writeLargeFile (94)
+Dec-05 03:38:45.740 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: writeLargeFile (10); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/de/4bba6ed8ad63f2b170fc337f248518]
+Dec-05 03:38:48.548 [Task submitter] INFO  nextflow.Session - [6c/b623bc] Submitted process > writeLargeFile (83)
+Dec-05 03:38:49.614 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 31; name: writeLargeFile (31); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/12/edb04c182773e9b2cc6af5e296ab03]
+Dec-05 03:38:51.389 [Task monitor] WARN  nextflow.k8s.client.K8sClient - K8s pod cannot be scheduled -- 0/8 nodes are available: 8 Insufficient cpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod..
+Dec-05 03:38:52.221 [Task submitter] INFO  nextflow.Session - [62/702ffd] Submitted process > writeLargeFile (75)
+Dec-05 03:38:54.890 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 14; name: writeLargeFile (14); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/71/bd8a484895bc16fa24304596e80dab]
+Dec-05 03:38:55.783 [Task submitter] INFO  nextflow.Session - [8d/7c64c3] Submitted process > writeLargeFile (100)
+Dec-05 03:38:59.470 [Task submitter] INFO  nextflow.Session - [27/cabe7d] Submitted process > writeLargeFile (73)
+Dec-05 03:39:02.367 [Task submitter] INFO  nextflow.Session - [a2/3a9c82] Submitted process > writeLargeFile (99)
+Dec-05 03:39:05.189 [Task submitter] INFO  nextflow.Session - [a9/bce5af] Submitted process > writeLargeFile (79)
+Dec-05 03:39:07.998 [Task submitter] INFO  nextflow.Session - [93/fb85e7] Submitted process > writeLargeFile (97)
+Dec-05 03:39:10.747 [Task submitter] INFO  nextflow.Session - [7e/d905b8] Submitted process > writeLargeFile (95)
+Dec-05 03:39:13.543 [Task submitter] INFO  nextflow.Session - [f5/a08624] Submitted process > writeLargeFile (98)
+Dec-05 03:39:16.469 [Task submitter] INFO  nextflow.Session - [1b/fd6b14] Submitted process > writeLargeFile (81)
+Dec-05 03:39:20.422 [Task submitter] INFO  nextflow.Session - [28/435a1f] Submitted process > writeLargeFile (70)
+Dec-05 03:39:23.619 [Task submitter] INFO  nextflow.Session - [a8/36cf86] Submitted process > writeLargeFile (74)
+Dec-05 03:39:25.089 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 56; name: writeLargeFile (56); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/c5/c02ce3a14c19fdd21cceab52c6b180]
+Dec-05 03:39:26.554 [Task submitter] INFO  nextflow.Session - [22/96120d] Submitted process > writeLargeFile (71)
+Dec-05 03:39:29.082 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 49; name: writeLargeFile (49); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/42/ca479ecf5a36e7bba4ffce9b6df895]
+Dec-05 03:39:32.917 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 32; name: writeLargeFile (32); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/49/b501f9f817137d88010a53b24ac1bf]
+Dec-05 03:39:46.750 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 57; name: writeLargeFile (57); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/91/435a19637379b33dd9648ebf98936e]
+Dec-05 03:39:48.648 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 65; name: writeLargeFile (65); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a6/dab4c5523f14b3ba3b06f850c6ed6c]
+Dec-05 03:39:49.622 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 47; name: writeLargeFile (47); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/44/93933d3d6b1d54ecbbe6ae610dbceb]
+Dec-05 03:39:50.233 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 50; name: writeLargeFile (50); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/ef/597e1b4fdce5c5182c326d46df4449]
+Dec-05 03:39:50.533 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 42; name: writeLargeFile (42); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/c1/8946b00c348253430cad058d259604]
+Dec-05 03:39:50.831 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 59; name: writeLargeFile (59); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a7/c707063069ab1c7d48a6af19a56f14]
+Dec-05 03:39:51.477 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 68; name: writeLargeFile (68); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/0d/0e46baddf92f387c5c859bb3e3c4da]
+Dec-05 03:39:52.130 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 52; name: writeLargeFile (52); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/c0/46f741f5756018fb3f2273d99d8ace]
+Dec-05 03:39:52.947 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 80; name: writeLargeFile (80); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/77/971ea3bbcb6c6b982dcb7efc99717a]
+Dec-05 03:39:53.754 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 88; name: writeLargeFile (88); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/3d/9838c75e02ad80b3f087ed9c6af0b9]
+Dec-05 03:39:54.559 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 92; name: writeLargeFile (92); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/88/41647f1a312b7c1509e329e298132d]
+Dec-05 03:39:55.001 [Task monitor] WARN  nextflow.k8s.client.K8sClient - K8s pod cannot be scheduled -- 0/8 nodes are available: 8 Insufficient cpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod..
+Dec-05 03:39:55.850 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 36; name: writeLargeFile (36); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/f3/1c27ae255b9022ee8dc119bc7861b7]
+Dec-05 03:39:57.004 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 58; name: writeLargeFile (58); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/37/e5d65f8f593a2c3d83ad34d85f7e38]
+Dec-05 03:39:57.513 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 54; name: writeLargeFile (54); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/82/323f90d1412d025a020eaeeae54791]
+Dec-05 03:39:58.024 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 62; name: writeLargeFile (62); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/d7/8dcf0a6c59166d99c767b043e9418e]
+Dec-05 03:39:58.439 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 48; name: writeLargeFile (48); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/db/b315c7340a837c3d71e41452279408]
+Dec-05 03:40:00.171 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 64; name: writeLargeFile (64); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/b5/dbc38dbc5115cb580e6c79882fe1ac]
+Dec-05 03:40:02.230 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 53; name: writeLargeFile (53); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/94/7c06fdffc328388e2aad2460141017]
+Dec-05 03:40:04.384 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 69; name: writeLargeFile (69); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/c1/a83d71aeaa2926d96e22aaab973e14]
+Dec-05 03:40:06.670 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 91; name: writeLargeFile (91); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/c0/ff120cca20f3bb2c17a54bfc6cf82a]
+Dec-05 03:40:09.159 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 90; name: writeLargeFile (90); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/6a/fc84df0318c6a61d7383ed7ed89ab0]
+Dec-05 03:40:55.735 [Task monitor] WARN  nextflow.k8s.client.K8sClient - K8s pod cannot be scheduled -- 0/8 nodes are available: 8 Insufficient cpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod..
+Dec-05 03:40:58.905 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 66; name: writeLargeFile (66); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/bc/dc18aa47faa337ea734e86a3193249]
+Dec-05 03:41:03.639 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 74; name: writeLargeFile (74); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a8/36cf867ed6951124d2bc6aeca92631]
+Dec-05 03:41:07.546 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 71; name: writeLargeFile (71); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/22/96120dcbd3a8d90d879a2a10e53058]
+Dec-05 03:41:11.746 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 78; name: writeLargeFile (78); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/fe/4aecf4999d0666b7b92cb987d2ecc6]
+Dec-05 03:41:14.782 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 94; name: writeLargeFile (94); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/be/09df6987608a93d69b04eaae121707]
+Dec-05 03:41:17.509 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 73; name: writeLargeFile (73); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/27/cabe7d56d5024fc5f00895e6c66fff]
+Dec-05 03:41:30.360 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 93; name: writeLargeFile (93); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/91/55486b6a9fc33753858d5a2368fcf4]
+Dec-05 03:41:31.169 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 38; name: writeLargeFile (38); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/7f/f4a261de453fc9c4e5d13796784395]
+Dec-05 03:41:31.974 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 85; name: writeLargeFile (85); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/c8/3ce76ac077bcf166ea6dab0f33aad7]
+Dec-05 03:41:32.439 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 76; name: writeLargeFile (76); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/47/2c6e349294ac9ee5101fff074fe41c]
+Dec-05 03:41:32.936 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 96; name: writeLargeFile (96); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/68/935821d892b4ab8d412b808dc3d164]
+Dec-05 03:41:33.337 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 83; name: writeLargeFile (83); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/6c/b623bc70756d86c614fc14d33d3085]
+Dec-05 03:41:33.838 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 75; name: writeLargeFile (75); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/62/702ffdaf3761bece8b9fd978518a28]
+Dec-05 03:41:34.497 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 100; name: writeLargeFile (100); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/8d/7c64c3d0b964664e9fbac7947374c3]
+Dec-05 03:41:34.995 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 99; name: writeLargeFile (99); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a2/3a9c823905966be9eb8bd2fb70b6c1]
+Dec-05 03:41:35.611 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 79; name: writeLargeFile (79); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a9/bce5af7c7226048bb456d0096b4ad0]
+Dec-05 03:41:36.453 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 98; name: writeLargeFile (98); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/f5/a086244f91757c493d6bfc8c113f31]
+Dec-05 03:41:37.283 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 18; name: writeLargeFile (18); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/dc/dad3d0df75d9a9b62de8ab61db3b60]
+Dec-05 03:41:41.800 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor k8s > tasks to be completed: 34 -- submitted tasks are shown below
+~> TaskHandler[id: 60; name: writeLargeFile (60); status: RUNNING; exit: -; error: -; workDir: /input/data/work/72/d08713778e83b668f5aec99abb3632]
+~> TaskHandler[id: 8; name: writeLargeFile (8); status: RUNNING; exit: -; error: -; workDir: /input/data/work/fc/143546ca679b36ef29f562d5ee78fc]
+~> TaskHandler[id: 28; name: writeLargeFile (28); status: RUNNING; exit: -; error: -; workDir: /input/data/work/5b/998de39065a0d87c572fb04fbd447d]
+~> TaskHandler[id: 61; name: writeLargeFile (61); status: RUNNING; exit: -; error: -; workDir: /input/data/work/d3/1b6a9c733eeab54a0b034199d0c20b]
+~> TaskHandler[id: 7; name: writeLargeFile (7); status: RUNNING; exit: -; error: -; workDir: /input/data/work/2a/90b7f457a7e1fc871f21d1e8d8b6a3]
+~> TaskHandler[id: 25; name: writeLargeFile (25); status: RUNNING; exit: -; error: -; workDir: /input/data/work/ae/1f2a1ea3ab96e445b4cf3f6aca3f30]
+~> TaskHandler[id: 2; name: writeLargeFile (2); status: RUNNING; exit: -; error: -; workDir: /input/data/work/87/906b512a75f3438c9266540b1a7dcb]
+~> TaskHandler[id: 67; name: writeLargeFile (67); status: RUNNING; exit: -; error: -; workDir: /input/data/work/99/2bc1b45c5f5e6e461835d6b0ba5677]
+~> TaskHandler[id: 22; name: writeLargeFile (22); status: RUNNING; exit: -; error: -; workDir: /input/data/work/9a/a04abd26db355faf4067bf11f5d088]
+~> TaskHandler[id: 33; name: writeLargeFile (33); status: SUBMITTED; exit: -; error: -; workDir: /input/data/work/ec/575054da0ca6e0ec39e0e8736f754d]
+.. remaining tasks omitted.
+Dec-05 03:41:42.648 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 60; name: writeLargeFile (60); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/72/d08713778e83b668f5aec99abb3632]
+Dec-05 03:41:44.178 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: writeLargeFile (8); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/fc/143546ca679b36ef29f562d5ee78fc]
+Dec-05 03:41:46.993 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 97; name: writeLargeFile (97); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/93/fb85e79d627c30c769575c3c827997]
+Dec-05 03:41:49.509 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 95; name: writeLargeFile (95); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/7e/d905b84cb1b5ab12c392777acf67cb]
+Dec-05 03:41:52.002 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 81; name: writeLargeFile (81); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/1b/fd6b14a5f405a20057830c0c4b6834]
+Dec-05 03:41:54.496 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 70; name: writeLargeFile (70); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/28/435a1f0cf1332af51197c40320d11b]
+Dec-05 03:41:56.005 [Task monitor] WARN  nextflow.k8s.client.K8sClient - K8s pod cannot be scheduled -- 0/8 nodes are available: 8 Insufficient cpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod..
+Dec-05 03:42:32.788 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 25; name: writeLargeFile (25); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/ae/1f2a1ea3ab96e445b4cf3f6aca3f30]
+Dec-05 03:42:35.795 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: writeLargeFile (2); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/87/906b512a75f3438c9266540b1a7dcb]
+Dec-05 03:42:38.893 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 67; name: writeLargeFile (67); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/99/2bc1b45c5f5e6e461835d6b0ba5677]
+Dec-05 03:42:42.578 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 28; name: writeLargeFile (28); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/5b/998de39065a0d87c572fb04fbd447d]
+Dec-05 03:42:46.801 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 61; name: writeLargeFile (61); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/d3/1b6a9c733eeab54a0b034199d0c20b]
+Dec-05 03:42:50.377 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: writeLargeFile (7); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/2a/90b7f457a7e1fc871f21d1e8d8b6a3]
+Dec-05 03:42:57.739 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 22; name: writeLargeFile (22); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/9a/a04abd26db355faf4067bf11f5d088]
+Dec-05 03:42:58.351 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 72; name: writeLargeFile (72); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/af/e057185bd8147e959c75ec4b1c9d91]
+Dec-05 03:42:59.117 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 41; name: writeLargeFile (41); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/0a/a86028581a2f75d28f84b0c575eacf]
+Dec-05 03:42:59.699 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 43; name: writeLargeFile (43); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/64/c9a6592bc594ff32eb64de75d2cefc]
+Dec-05 03:43:00.479 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 63; name: writeLargeFile (63); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/84/e8558e89fb2fe378078ab64eac016d]
+Dec-05 03:43:01.062 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 40; name: writeLargeFile (40); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/8c/feb42b8706f3e7ef678a6de83ab88b]
+Dec-05 03:43:07.552 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 33; name: writeLargeFile (33); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/ec/575054da0ca6e0ec39e0e8736f754d]
+Dec-05 03:43:08.220 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 44; name: writeLargeFile (44); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/07/b60478012ff8828a2eadd095f38055]
+Dec-05 03:43:08.873 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 37; name: writeLargeFile (37); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/70/529bcc68e04a0ad133c8e766180c93]
+Dec-05 03:43:09.524 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 77; name: writeLargeFile (77); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/e1/be542098cd731ac73ab03c04aa74c7]
+Dec-05 03:43:10.161 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 39; name: writeLargeFile (39); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/84/f3a11aac99fd9f278ea07885678d30]
+Dec-05 03:43:12.549 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 34; name: writeLargeFile (34); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/05/aa12ff3ffc091f10784cbf130f8815]
+Dec-05 03:43:22.187 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 35; name: writeLargeFile (35); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/75/4128e440d08060be609878c3394e20]
+Dec-05 03:43:22.227 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 82; name: writeLargeFile (82); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/91/06af7a267ab653e198068ae9baa9cc]
+Dec-05 03:43:22.266 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 55; name: writeLargeFile (55); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/e6/c286d4f93318eaa055208bf863b0c4]
+Dec-05 03:43:22.300 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 84; name: writeLargeFile (84); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/ec/09661c33fe40173a6e8fb83b5d978b]
+Dec-05 03:43:22.336 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 45; name: writeLargeFile (45); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/da/635939044da7b93b57ba18387326f2]
+Dec-05 03:43:22.371 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 46; name: writeLargeFile (46); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/56/c3dd336d7d507795450c9cad7a8165]
+Dec-05 03:43:22.410 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 86; name: writeLargeFile (86); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/75/fc57f266b226b18a0defd125b8c626]
+Dec-05 03:43:22.447 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 87; name: writeLargeFile (87); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/72/68d681edea54972cf1544c0cce000f]
+Dec-05 03:43:22.485 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 51; name: writeLargeFile (51); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/0d/e860d509af2ac25554901f2b55f54a]
+Dec-05 03:43:22.520 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 89; name: writeLargeFile (89); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/87/307eb33ea3985c3f14a3e6ab378096]
+Dec-05 03:43:22.591 [Task submitter] INFO  nextflow.Session - [df/a5c76b] Submitted process > combineFilesB (26)
+Dec-05 03:43:22.623 [Task submitter] INFO  nextflow.Session - [09/41d03e] Submitted process > combineFilesA (18)
+Dec-05 03:43:22.649 [Task submitter] INFO  nextflow.Session - [82/53273d] Submitted process > combineFilesA (19)
+Dec-05 03:43:22.679 [Task submitter] INFO  nextflow.Session - [e6/35aca7] Submitted process > combineFilesB (4)
+Dec-05 03:43:22.706 [Task submitter] INFO  nextflow.Session - [0d/259ea1] Submitted process > combineFilesA (2)
+Dec-05 03:43:22.732 [Task submitter] INFO  nextflow.Session - [a8/65d927] Submitted process > combineFilesA (9)
+Dec-05 03:43:22.757 [Task submitter] INFO  nextflow.Session - [62/edf08c] Submitted process > combineFilesA (27)
+Dec-05 03:43:22.785 [Task submitter] INFO  nextflow.Session - [c8/b9ed97] Submitted process > combineFilesB (6)
+Dec-05 03:43:22.810 [Task submitter] INFO  nextflow.Session - [75/6eb1e0] Submitted process > combineFilesB (18)
+Dec-05 03:43:22.836 [Task submitter] INFO  nextflow.Session - [f3/84ccab] Submitted process > combineFilesA (23)
+Dec-05 03:43:22.861 [Task submitter] INFO  nextflow.Session - [44/73172d] Submitted process > combineFilesA (13)
+Dec-05 03:43:22.887 [Task submitter] INFO  nextflow.Session - [14/be7cde] Submitted process > combineFilesA (12)
+Dec-05 03:43:22.915 [Task submitter] INFO  nextflow.Session - [88/1e57c6] Submitted process > combineFilesB (1)
+Dec-05 03:43:22.941 [Task submitter] INFO  nextflow.Session - [af/b5b13a] Submitted process > combineFilesA (3)
+Dec-05 03:43:22.967 [Task submitter] INFO  nextflow.Session - [07/e2e0b6] Submitted process > combineFilesB (23)
+Dec-05 03:43:22.995 [Task submitter] INFO  nextflow.Session - [e2/b26f8e] Submitted process > combineFilesA (24)
+Dec-05 03:43:23.016 [Task submitter] INFO  nextflow.Session - [a9/06116d] Submitted process > combineFilesA (20)
+Dec-05 03:43:23.047 [Task submitter] INFO  nextflow.Session - [93/d28edc] Submitted process > combineFilesA (1)
+Dec-05 03:43:23.079 [Task submitter] INFO  nextflow.Session - [dc/5ab28f] Submitted process > combineFilesA (15)
+Dec-05 03:43:23.104 [Task submitter] INFO  nextflow.Session - [8c/59bcab] Submitted process > combineFilesA (26)
+Dec-05 03:43:23.131 [Task submitter] INFO  nextflow.Session - [a8/717da8] Submitted process > combineFilesB (12)
+Dec-05 03:43:23.158 [Task submitter] INFO  nextflow.Session - [fe/465c78] Submitted process > combineFilesB (9)
+Dec-05 03:43:23.185 [Task submitter] INFO  nextflow.Session - [27/22b764] Submitted process > combineFilesA (10)
+Dec-05 03:43:23.213 [Task submitter] INFO  nextflow.Session - [75/54700a] Submitted process > combineFilesB (2)
+Dec-05 03:43:23.242 [Task submitter] INFO  nextflow.Session - [f5/c00d67] Submitted process > combineFilesB (16)
+Dec-05 03:43:23.267 [Task submitter] INFO  nextflow.Session - [db/582b36] Submitted process > combineFilesA (30)
+Dec-05 03:43:23.294 [Task submitter] INFO  nextflow.Session - [5c/fbfc2a] Submitted process > combineFilesA (25)
+Dec-05 03:43:23.324 [Task submitter] INFO  nextflow.Session - [b0/37a3d3] Submitted process > combineFilesA (7)
+Dec-05 03:43:23.350 [Task submitter] INFO  nextflow.Session - [29/f42cfd] Submitted process > combineFilesB (3)
+Dec-05 03:43:23.375 [Task submitter] INFO  nextflow.Session - [17/741b16] Submitted process > combineFilesA (32)
+Dec-05 03:43:23.399 [Task submitter] INFO  nextflow.Session - [54/3658f6] Submitted process > combineFilesB (22)
+Dec-05 03:43:23.422 [Task submitter] INFO  nextflow.Session - [77/c02b35] Submitted process > combineFilesA (33)
+Dec-05 03:43:23.448 [Task submitter] INFO  nextflow.Session - [29/8d0512] Submitted process > combineFilesB (14)
+Dec-05 03:43:23.474 [Task submitter] INFO  nextflow.Session - [29/60129c] Submitted process > combineFilesA (22)
+Dec-05 03:43:23.500 [Task submitter] INFO  nextflow.Session - [8f/ab0e7b] Submitted process > combineFilesA (6)
+Dec-05 03:43:23.534 [Task submitter] INFO  nextflow.Session - [29/40f8d9] Submitted process > combineFilesA (11)
+Dec-05 03:43:23.564 [Task submitter] INFO  nextflow.Session - [58/d08fa6] Submitted process > combineFilesA (28)
+Dec-05 03:43:23.596 [Task submitter] INFO  nextflow.Session - [f0/1f21aa] Submitted process > combineFilesA (16)
+Dec-05 03:43:23.674 [Task submitter] INFO  nextflow.Session - [29/c13c45] Submitted process > combineFilesB (25)
+Dec-05 03:43:23.776 [Task submitter] INFO  nextflow.Session - [59/a198a9] Submitted process > combineFilesA (17)
+Dec-05 03:43:24.070 [Task submitter] INFO  nextflow.Session - [59/a3d775] Submitted process > combineFilesA (14)
+Dec-05 03:43:24.690 [Task submitter] INFO  nextflow.Session - [85/171e9d] Submitted process > combineFilesB (24)
+Dec-05 03:43:25.520 [Task submitter] INFO  nextflow.Session - [b6/29a8a2] Submitted process > combineFilesB (17)
+Dec-05 03:43:26.391 [Task submitter] INFO  nextflow.Session - [06/40691b] Submitted process > combineFilesB (11)
+Dec-05 03:43:27.552 [Task submitter] INFO  nextflow.Session - [3f/4b9842] Submitted process > combineFilesB (13)
+Dec-05 03:43:27.789 [Task monitor] WARN  nextflow.k8s.client.K8sClient - K8s pod cannot be scheduled -- 0/8 nodes are available: 8 Insufficient cpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod..
+Dec-05 03:43:28.419 [Task submitter] INFO  nextflow.Session - [ce/9f11bb] Submitted process > combineFilesA (21)
+Dec-05 03:43:29.315 [Task submitter] INFO  nextflow.Session - [00/fe43a4] Submitted process > combineFilesA (8)
+Dec-05 03:43:30.193 [Task submitter] INFO  nextflow.Session - [ee/1d516a] Submitted process > combineFilesB (8)
+Dec-05 03:43:31.137 [Task submitter] INFO  nextflow.Session - [10/95937f] Submitted process > combineFilesA (29)
+Dec-05 03:43:32.008 [Task submitter] INFO  nextflow.Session - [5d/31361a] Submitted process > combineFilesB (10)
+Dec-05 03:43:32.898 [Task submitter] INFO  nextflow.Session - [fd/1d75ed] Submitted process > combineFilesA (31)
+Dec-05 03:43:33.780 [Task submitter] INFO  nextflow.Session - [4e/c4f723] Submitted process > combineFilesA (5)
+Dec-05 03:43:34.687 [Task submitter] INFO  nextflow.Session - [f4/2471fa] Submitted process > combineFilesB (5)
+Dec-05 03:43:35.473 [Task submitter] INFO  nextflow.Session - [f4/b202f3] Submitted process > combineFilesB (15)
+Dec-05 03:43:36.352 [Task submitter] INFO  nextflow.Session - [ad/50c3f1] Submitted process > combineFilesB (7)
+Dec-05 03:43:37.236 [Task submitter] INFO  nextflow.Session - [8e/87afc7] Submitted process > combineFilesB (20)
+Dec-05 03:43:38.114 [Task submitter] INFO  nextflow.Session - [50/d16559] Submitted process > combineFilesA (4)
+Dec-05 03:43:39.001 [Task submitter] INFO  nextflow.Session - [13/1c8b59] Submitted process > combineFilesB (21)
+Dec-05 03:43:39.873 [Task submitter] INFO  nextflow.Session - [66/dda5cb] Submitted process > combineFilesB (19)
+Dec-05 03:43:40.730 [Task submitter] INFO  nextflow.Session - [33/27e6be] Submitted process > combineFilesA (34)
+Dec-05 03:44:27.791 [Task monitor] WARN  nextflow.k8s.client.K8sClient - K8s pod cannot be scheduled -- 0/8 nodes are available: 8 Insufficient cpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod..
+Dec-05 03:45:07.767 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 146; name: combineFilesB (26); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/df/a5c76bfff26fc6b1b67c75b4164d1f]
+Dec-05 03:45:27.801 [Task monitor] WARN  nextflow.k8s.client.K8sClient - K8s pod cannot be scheduled -- 0/8 nodes are available: 8 Insufficient cpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod..
+Dec-05 03:46:27.812 [Task monitor] WARN  nextflow.k8s.client.K8sClient - K8s pod cannot be scheduled -- 0/8 nodes are available: 8 Insufficient cpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod..
+Dec-05 03:46:42.162 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor k8s > tasks to be completed: 59 -- submitted tasks are shown below
+~> TaskHandler[id: 142; name: combineFilesA (18); status: RUNNING; exit: -; error: -; workDir: /input/data/work/09/41d03ea57431eea17069a24e1da4b2]
+~> TaskHandler[id: 143; name: combineFilesA (19); status: RUNNING; exit: -; error: -; workDir: /input/data/work/82/53273d57f7c2e436c8dfdcc4af6080]
+~> TaskHandler[id: 107; name: combineFilesB (4); status: RUNNING; exit: -; error: -; workDir: /input/data/work/e6/35aca7904644601391db08e086a23a]
+~> TaskHandler[id: 103; name: combineFilesA (2); status: RUNNING; exit: -; error: -; workDir: /input/data/work/0d/259ea187c6b4925575f381169447c1]
+~> TaskHandler[id: 119; name: combineFilesA (9); status: RUNNING; exit: -; error: -; workDir: /input/data/work/a8/65d9274d102c908100decca42812e7]
+~> TaskHandler[id: 153; name: combineFilesA (27); status: RUNNING; exit: -; error: -; workDir: /input/data/work/62/edf08cde955bb66cfd974002f5b992]
+~> TaskHandler[id: 111; name: combineFilesB (6); status: RUNNING; exit: -; error: -; workDir: /input/data/work/c8/b9ed9789d2f298fcd0f0ac65494f9a]
+~> TaskHandler[id: 132; name: combineFilesB (18); status: RUNNING; exit: -; error: -; workDir: /input/data/work/75/6eb1e04442ec92f7566cec78e93e59]
+~> TaskHandler[id: 149; name: combineFilesA (23); status: RUNNING; exit: -; error: -; workDir: /input/data/work/f3/84ccabc5b25b3d2ba441f30f1b1f3a]
+~> TaskHandler[id: 127; name: combineFilesA (13); status: RUNNING; exit: -; error: -; workDir: /input/data/work/44/73172da0da949b8366ce214fe5d9e2]
+.. remaining tasks omitted.
+Dec-05 03:47:27.824 [Task monitor] WARN  nextflow.k8s.client.K8sClient - K8s pod cannot be scheduled -- 0/8 nodes are available: 8 Insufficient cpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod..
+Dec-05 03:47:37.436 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 119; name: combineFilesA (9); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a8/65d9274d102c908100decca42812e7]
+Dec-05 03:48:07.646 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 143; name: combineFilesA (19); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/82/53273d57f7c2e436c8dfdcc4af6080]
+Dec-05 03:48:08.411 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 149; name: combineFilesA (23); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/f3/84ccabc5b25b3d2ba441f30f1b1f3a]
+Dec-05 03:48:09.131 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 150; name: combineFilesA (24); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/e2/b26f8e7b2a56bc01b99d52752ba8e2]
+Dec-05 03:48:09.885 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 144; name: combineFilesA (20); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a9/06116dc4f9b88d18eb304e6fa5664f]
+Dec-05 03:48:27.835 [Task monitor] WARN  nextflow.k8s.client.K8sClient - K8s pod cannot be scheduled -- 0/8 nodes are available: 8 Insufficient cpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod..
+Dec-05 03:48:32.977 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 142; name: combineFilesA (18); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/09/41d03ea57431eea17069a24e1da4b2]
+Dec-05 03:49:27.931 [Task monitor] WARN  nextflow.k8s.client.K8sClient - K8s pod cannot be scheduled -- 0/8 nodes are available: 8 Insufficient cpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod..
+Dec-05 03:50:12.521 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 102; name: combineFilesB (1); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/88/1e57c6314d93b4eb0124d156f6dae1]
+Dec-05 03:50:13.182 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 122; name: combineFilesB (12); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a8/717da86c7c0e6b2b1c0014918c5290]
+Dec-05 03:50:27.951 [Task monitor] WARN  nextflow.k8s.client.K8sClient - K8s pod cannot be scheduled -- 0/8 nodes are available: 8 Insufficient cpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod..
+Dec-05 03:50:59.557 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 152; name: combineFilesA (26); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/8c/59bcab0dec458b8a457e74c9876343]
+Dec-05 03:51:01.191 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 136; name: combineFilesA (16); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/f0/1f21aa0f8add20b73f05c6f93c849a]
+Dec-05 03:51:02.012 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 145; name: combineFilesB (25); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/29/c13c4505aa38acaac0a9ecfb5ac64f]
+Dec-05 03:51:03.273 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 107; name: combineFilesB (4); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/e6/35aca7904644601391db08e086a23a]
+Dec-05 03:51:04.150 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 103; name: combineFilesA (2); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/0d/259ea187c6b4925575f381169447c1]
+Dec-05 03:51:05.092 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 127; name: combineFilesA (13); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/44/73172da0da949b8366ce214fe5d9e2]
+Dec-05 03:51:05.754 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 126; name: combineFilesA (12); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/14/be7cdee39dc49e5b903d265c521f9c]
+Dec-05 03:51:06.827 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 101; name: combineFilesA (1); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/93/d28edc9f1b4b9d45451c97d7734353]
+Dec-05 03:51:08.627 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 133; name: combineFilesA (15); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/dc/5ab28fecfb6dc760eaf1388cbf0557]
+Dec-05 03:51:30.212 [Task monitor] WARN  nextflow.k8s.client.K8sClient - K8s pod cannot be scheduled -- 0/8 nodes are available: 8 Insufficient cpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod..
+Dec-05 03:51:45.045 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor k8s > tasks to be completed: 42 -- submitted tasks are shown below
+~> TaskHandler[id: 153; name: combineFilesA (27); status: RUNNING; exit: -; error: -; workDir: /input/data/work/62/edf08cde955bb66cfd974002f5b992]
+~> TaskHandler[id: 111; name: combineFilesB (6); status: RUNNING; exit: -; error: -; workDir: /input/data/work/c8/b9ed9789d2f298fcd0f0ac65494f9a]
+~> TaskHandler[id: 132; name: combineFilesB (18); status: RUNNING; exit: -; error: -; workDir: /input/data/work/75/6eb1e04442ec92f7566cec78e93e59]
+~> TaskHandler[id: 106; name: combineFilesA (3); status: RUNNING; exit: -; error: -; workDir: /input/data/work/af/b5b13a9901828198ef401d734f06a5]
+~> TaskHandler[id: 140; name: combineFilesB (23); status: RUNNING; exit: -; error: -; workDir: /input/data/work/07/e2e0b64a2cf4357ad0e0dad6e53af4]
+~> TaskHandler[id: 116; name: combineFilesB (9); status: RUNNING; exit: -; error: -; workDir: /input/data/work/fe/465c78e6af81e4934536ea07462842]
+~> TaskHandler[id: 121; name: combineFilesA (10); status: RUNNING; exit: -; error: -; workDir: /input/data/work/27/22b764c8a5085e62d9128a9eac3d65]
+~> TaskHandler[id: 104; name: combineFilesB (2); status: SUBMITTED; exit: -; error: -; workDir: /input/data/work/75/54700a2491980a42424c0989b1ea48]
+~> TaskHandler[id: 129; name: combineFilesB (16); status: SUBMITTED; exit: -; error: -; workDir: /input/data/work/f5/c00d67d5fda31e8d03543cc5970459]
+~> TaskHandler[id: 156; name: combineFilesA (30); status: SUBMITTED; exit: -; error: -; workDir: /input/data/work/db/582b36f8020ef9997156f2b1f9d87b]
+.. remaining tasks omitted.
+Dec-05 03:51:45.354 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 153; name: combineFilesA (27); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/62/edf08cde955bb66cfd974002f5b992]
+Dec-05 03:51:46.022 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 106; name: combineFilesA (3); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/af/b5b13a9901828198ef401d734f06a5]
+Dec-05 03:51:46.592 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 116; name: combineFilesB (9); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/fe/465c78e6af81e4934536ea07462842]
+Dec-05 03:52:05.940 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 138; name: combineFilesA (17); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/59/a198a9cbb28c7b0b9dd453040be2a7]
+Dec-05 03:52:10.386 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 111; name: combineFilesB (6); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/c8/b9ed9789d2f298fcd0f0ac65494f9a]
+Dec-05 03:52:30.247 [Task monitor] WARN  nextflow.k8s.client.K8sClient - K8s pod cannot be scheduled -- 0/8 nodes are available: 8 Insufficient cpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod..
+Dec-05 03:52:46.241 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 132; name: combineFilesB (18); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/75/6eb1e04442ec92f7566cec78e93e59]
+Dec-05 03:52:47.727 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 140; name: combineFilesB (23); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/07/e2e0b64a2cf4357ad0e0dad6e53af4]
+Dec-05 03:52:49.649 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 147; name: combineFilesA (21); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/ce/9f11bb7d55f5762842682cb48bd0d8]
+Dec-05 03:53:16.002 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 130; name: combineFilesA (14); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/59/a3d7757499355076b7b9d9401d3832]
+Dec-05 03:53:30.577 [Task monitor] WARN  nextflow.k8s.client.K8sClient - K8s pod cannot be scheduled -- 0/8 nodes are available: 8 Insufficient cpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod..
+Dec-05 03:54:02.005 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 155; name: combineFilesA (29); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/10/95937fa8c3a6f90fb698a2fc4bd5b1]
+Dec-05 03:54:30.579 [Task monitor] WARN  nextflow.k8s.client.K8sClient - K8s pod cannot be scheduled -- 0/8 nodes are available: 8 Insufficient cpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod..
+Dec-05 03:54:36.896 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 121; name: combineFilesA (10); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/27/22b764c8a5085e62d9128a9eac3d65]
+Dec-05 03:54:39.026 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 110; name: combineFilesA (5); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/4e/c4f723b21cf493c7a9880310406011]
+Dec-05 03:55:01.279 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 158; name: combineFilesA (32); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/17/741b16b0604d969a049b255dd56458]
+Dec-05 03:55:16.026 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 131; name: combineFilesB (17); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/b6/29a8a2be76e03f3fe964f48234051e]
+Dec-05 03:55:16.291 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 117; name: combineFilesA (8); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/00/fe43a4ddc76e7caa52ae739e3c06df]
+Dec-05 03:55:16.481 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 115; name: combineFilesB (8); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/ee/1d516a8b92e64c21d9ef01d0ccb6f3]
+Dec-05 03:55:21.009 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 118; name: combineFilesB (10); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/5d/31361ac586dddb4423c0897661b4ad]
+Dec-05 03:55:30.710 [Task monitor] WARN  nextflow.k8s.client.K8sClient - K8s pod cannot be scheduled -- 0/8 nodes are available: 8 Insufficient cpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod..
+Dec-05 03:56:27.074 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 128; name: combineFilesB (15); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/f4/b202f36f939732eb2967116ba15425]
+Dec-05 03:56:28.538 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 134; name: combineFilesB (19); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/66/dda5cb7c118571f583b75f5bcd1a9c]
+Dec-05 03:56:31.574 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 141; name: combineFilesB (24); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/85/171e9d8db93f45f8502a1028ff07d8]
+Dec-05 03:56:33.013 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 124; name: combineFilesB (13); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/3f/4b984290c9f8d4eadbd85a3dedf668]
+Dec-05 03:56:45.521 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor k8s > tasks to be completed: 21 -- submitted tasks are shown below
+~> TaskHandler[id: 104; name: combineFilesB (2); status: RUNNING; exit: -; error: -; workDir: /input/data/work/75/54700a2491980a42424c0989b1ea48]
+~> TaskHandler[id: 129; name: combineFilesB (16); status: RUNNING; exit: -; error: -; workDir: /input/data/work/f5/c00d67d5fda31e8d03543cc5970459]
+~> TaskHandler[id: 156; name: combineFilesA (30); status: RUNNING; exit: -; error: -; workDir: /input/data/work/db/582b36f8020ef9997156f2b1f9d87b]
+~> TaskHandler[id: 151; name: combineFilesA (25); status: RUNNING; exit: -; error: -; workDir: /input/data/work/5c/fbfc2a96b4ff82e8f34ad2018bd7ef]
+~> TaskHandler[id: 114; name: combineFilesA (7); status: RUNNING; exit: -; error: -; workDir: /input/data/work/b0/37a3d3a7a2875a8c9c6a806b48f0e7]
+~> TaskHandler[id: 105; name: combineFilesB (3); status: RUNNING; exit: -; error: -; workDir: /input/data/work/29/f42cfd52ecd4438f5f8570e1b18b13]
+~> TaskHandler[id: 139; name: combineFilesB (22); status: RUNNING; exit: -; error: -; workDir: /input/data/work/54/3658f68db3ab1bc305bd973d7e2bae]
+~> TaskHandler[id: 159; name: combineFilesA (33); status: RUNNING; exit: -; error: -; workDir: /input/data/work/77/c02b351337229271083034bffeacd3]
+~> TaskHandler[id: 125; name: combineFilesB (14); status: RUNNING; exit: -; error: -; workDir: /input/data/work/29/8d0512b1cb80909ee37b04127a03f3]
+~> TaskHandler[id: 148; name: combineFilesA (22); status: RUNNING; exit: -; error: -; workDir: /input/data/work/29/60129c40b678e8187e5b106767af96]
+.. remaining tasks omitted.
+Dec-05 03:57:21.740 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 151; name: combineFilesA (25); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/5c/fbfc2a96b4ff82e8f34ad2018bd7ef]
+Dec-05 03:57:23.499 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 157; name: combineFilesA (31); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/fd/1d75ed5c35dbe9765bdf2bbc0f4827]
+Dec-05 03:58:10.542 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 120; name: combineFilesB (11); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/06/40691bc54ffd208d783a418196b7e5]
+Dec-05 03:58:17.011 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 137; name: combineFilesB (21); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/13/1c8b5989a8ea5b0beb737a8f137152]
+Dec-05 03:58:45.662 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 125; name: combineFilesB (14); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/29/8d0512b1cb80909ee37b04127a03f3]
+Dec-05 03:58:58.312 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 160; name: combineFilesA (34); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/33/27e6be1047aebbc0b4eb080f7b41d6]
+Dec-05 03:59:44.858 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 148; name: combineFilesA (22); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/29/60129c40b678e8187e5b106767af96]
+Dec-05 03:59:53.191 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 154; name: combineFilesA (28); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/58/d08fa61ab895d2cd1ab243b57f2316]
+Dec-05 04:00:07.141 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 123; name: combineFilesA (11); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/29/40f8d9b3a4ceed12c50b5f9c4f6c74]
+Dec-05 04:00:42.874 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 104; name: combineFilesB (2); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/75/54700a2491980a42424c0989b1ea48]
+Dec-05 04:00:46.847 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 129; name: combineFilesB (16); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/f5/c00d67d5fda31e8d03543cc5970459]
+Dec-05 04:00:51.030 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 109; name: combineFilesB (5); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/f4/2471faa182dd02cfcbb67391836822]
+Dec-05 04:00:54.264 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 113; name: combineFilesB (7); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/ad/50c3f148cb18b8388d9367ce641478]
+Dec-05 04:01:07.037 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 105; name: combineFilesB (3); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/29/f42cfd52ecd4438f5f8570e1b18b13]
+Dec-05 04:01:10.778 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 159; name: combineFilesA (33); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/77/c02b351337229271083034bffeacd3]
+Dec-05 04:01:17.114 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 112; name: combineFilesA (6); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/8f/ab0e7bdb41b94340b7f8bdd738d443]
+Dec-05 04:01:19.749 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 108; name: combineFilesA (4); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/50/d1655915dd9d022e2151875e2c4fd4]
+Dec-05 04:01:25.524 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 114; name: combineFilesA (7); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/b0/37a3d3a7a2875a8c9c6a806b48f0e7]
+Dec-05 04:01:25.688 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 135; name: combineFilesB (20); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/8e/87afc7dfd3fae872d40f781e8d2f59]
+Dec-05 04:01:50.407 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor k8s > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 156; name: combineFilesA (30); status: RUNNING; exit: -; error: -; workDir: /input/data/work/db/582b36f8020ef9997156f2b1f9d87b]
+~> TaskHandler[id: 139; name: combineFilesB (22); status: RUNNING; exit: -; error: -; workDir: /input/data/work/54/3658f68db3ab1bc305bd973d7e2bae]
+Dec-05 04:02:05.448 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 156; name: combineFilesA (30); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/db/582b36f8020ef9997156f2b1f9d87b]
+Dec-05 04:02:05.490 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 139; name: combineFilesB (22); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/54/3658f68db3ab1bc305bd973d7e2bae]
+Dec-05 04:02:05.491 [main] DEBUG nextflow.Session - Session await > all processes finished
+Dec-05 04:02:05.492 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Dec-05 04:02:05.503 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=160; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=2d 1h 40m 23s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=25; peakCpus=250; peakMemory=494.1 GB; ]
+Dec-05 04:02:05.503 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Dec-05 04:02:05.515 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Dec-05 04:02:06.117 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+Dec-05 04:02:06.267 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Dec-05 04:02:06.290 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Dec-05 04:02:06.290 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

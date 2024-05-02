@@ -1,0 +1,273 @@
+Dec-18 17:07:14.247 [main] DEBUG nextflow.cli.Launcher - $> nextflow run /input/fork -c /experiments/experiment/fork/nextflow.config -c /experiments/experiment/nextflow_la.config -c /experiments/experiment/nextflow_ceph.config
+Dec-18 17:07:14.305 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.07.0-edge
+Dec-18 17:07:14.323 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/.nextflow/plugins; core-plugins: nf-amazon@2.1.0,nf-azure@1.1.4,nf-cloudcache@0.1.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.1,nf-tower@1.5.15,nf-wave@0.11.0
+Dec-18 17:07:14.332 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Dec-18 17:07:14.333 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Dec-18 17:07:14.335 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Dec-18 17:07:14.343 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Dec-18 17:07:14.362 [main] DEBUG nextflow.scm.AssetManager - Project manifest does not exist: /input/fork/nextflow.config (No such file or directory)
+Dec-18 17:07:14.384 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /experiments/experiment/fork/nextflow.config
+Dec-18 17:07:14.384 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /experiments/experiment/nextflow_la.config
+Dec-18 17:07:14.384 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /experiments/experiment/nextflow_ceph.config
+Dec-18 17:07:14.385 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /experiments/experiment/fork/nextflow.config
+Dec-18 17:07:14.385 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /experiments/experiment/nextflow_la.config
+Dec-18 17:07:14.385 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /experiments/experiment/nextflow_ceph.config
+Dec-18 17:07:14.398 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Dec-18 17:07:14.874 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Dec-18 17:07:15.023 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Dec-18 17:07:15.047 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Dec-18 17:07:15.059 [main] INFO  nextflow.cli.CmdRun - Launching `/input/fork/main.nf` [distraught_leibniz] DSL2 - revision: 64aabf06f3
+Dec-18 17:07:15.059 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Dec-18 17:07:15.059 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Dec-18 17:07:15.066 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /.nextflow/secrets/store.json
+Dec-18 17:07:15.068 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@20d87335] - activable => nextflow.secret.LocalSecretsProvider@20d87335
+Dec-18 17:07:15.117 [main] DEBUG nextflow.Session - Session UUID: bdbef886-f7d2-42cb-a956-26e3a04a2030
+Dec-18 17:07:15.117 [main] DEBUG nextflow.Session - Run name: distraught_leibniz
+Dec-18 17:07:15.117 [main] DEBUG nextflow.Session - Executor pool size: 32
+Dec-18 17:07:15.123 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Dec-18 17:07:15.125 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=96; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Dec-18 17:07:15.153 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.07.0-edge build 5875
+  Created: 28-07-2023 20:27 UTC (20:27 GMT)
+  System: Linux 5.4.0-166-generic
+  Runtime: Groovy 3.0.18 on OpenJDK 64-Bit Server VM 17.0.6+10-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 1996618@nextflow [10.233.76.3]
+  CPUs: 32 - Mem: 125.7 GB (120.2 GB) - Swap: 0 (0)
+Dec-18 17:07:15.179 [main] DEBUG nextflow.Session - Work-dir: /input/data/work [ceph]
+Dec-18 17:07:15.179 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /input/fork/bin
+Dec-18 17:07:15.187 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Dec-18 17:07:15.194 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Dec-18 17:07:15.221 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Dec-18 17:07:15.228 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 33; maxThreads: 1000
+Dec-18 17:07:15.322 [main] DEBUG nextflow.Session - Session start
+Dec-18 17:07:15.327 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /input/data/output/trace.csv
+Dec-18 17:07:15.460 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Dec-18 17:07:15.666 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:writeLargeFile` matches process writeLargeFile
+Dec-18 17:07:15.686 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: k8s
+Dec-18 17:07:15.686 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'k8s'
+Dec-18 17:07:15.694 [main] DEBUG nextflow.executor.Executor - [warm up] executor > k8s
+Dec-18 17:07:15.718 [main] DEBUG n.processor.TaskPollingMonitor - Creating task monitor for executor 'k8s' > capacity: 300; pollInterval: 5s; dumpInterval: 5m; schedulerBatch: null
+Dec-18 17:07:15.723 [main] DEBUG nextflow.k8s.client.ConfigDiscovery - K8s config file does not exist: /root/.kube/config
+Dec-18 17:07:15.733 [main] DEBUG nextflow.k8s.K8sExecutor - [K8s] config=[localPath:/localdata, localStorageMountPath:/localdata, scheduler:[strategy:LAv2, name:workflow-scheduler, autoClose:false, nodeSelector:usedby=anonymized, container:anonymized/test1:sch_v194], storage:[type:copy, workdir:/localdata/localwork/, nodeSelector:usedby=anonymized, imageName:anonymized/test1:ftp_v122], debug:[yaml:true], namespace:anonymized, serviceAccount:nextflow, workDir:/input/data/work/, projectDir:/input/data/project/, imagePullPolicy:IfNotPresent, launchDir:/input/data/launch/, runAsUser:0, fetchNodeName:true, storageMountPath:/input, pod:[nodeSelector:usedby=anonymized], storageClaimName:ceph-data]; API client config=ClientConfig[ server=10.233.0.1:443, namespace=anonymized, serviceAccount=nextflow, token=eyJhbGciOiJ.., sslCert=LS0tLS1CRUd.., clientCert=-, clientKey=-, verifySsl=false, fromFile=true, httpReadTimeout=null, httpConnectTimeout=null, maxErrorRetry=4 ]
+Dec-18 17:07:16.157 [main] DEBUG nextflow.k8s.K8sExecutor - Created K8s configMap with name: nf-get-stat-41cac373
+Dec-18 17:07:19.900 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:revertFile` matches process revertFile
+Dec-18 17:07:19.903 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: k8s
+Dec-18 17:07:19.903 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'k8s'
+Dec-18 17:07:19.927 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: revertFile, combineFiles, writeLargeFile
+Dec-18 17:07:19.929 [main] DEBUG nextflow.Session - Igniting dataflow network (3)
+Dec-18 17:07:19.929 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > writeLargeFile
+Dec-18 17:07:19.932 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > revertFile
+Dec-18 17:07:19.932 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Dec-18 17:07:19.932 [main] DEBUG nextflow.Session - Session await
+Dec-18 17:07:20.119 [Task submitter] INFO  nextflow.Session - [0c/67ec97] Submitted process > writeLargeFile (1)
+Dec-18 17:07:30.794 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: writeLargeFile (1); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/0c/67ec9778b409613c5bfc993e4ebdd0]
+Dec-18 17:07:30.918 [Task submitter] INFO  nextflow.Session - [3e/7e3f1f] Submitted process > revertFile (14)
+Dec-18 17:07:30.972 [Task submitter] INFO  nextflow.Session - [2e/7aa014] Submitted process > revertFile (13)
+Dec-18 17:07:31.005 [Task submitter] INFO  nextflow.Session - [6f/616308] Submitted process > revertFile (27)
+Dec-18 17:07:31.042 [Task submitter] INFO  nextflow.Session - [f9/077759] Submitted process > revertFile (7)
+Dec-18 17:07:31.081 [Task submitter] INFO  nextflow.Session - [84/2ac932] Submitted process > revertFile (3)
+Dec-18 17:07:31.125 [Task submitter] INFO  nextflow.Session - [a8/3b9dfc] Submitted process > revertFile (18)
+Dec-18 17:07:31.157 [Task submitter] INFO  nextflow.Session - [f0/163ed7] Submitted process > revertFile (16)
+Dec-18 17:07:31.189 [Task submitter] INFO  nextflow.Session - [7d/a21cc4] Submitted process > revertFile (8)
+Dec-18 17:07:31.226 [Task submitter] INFO  nextflow.Session - [b3/bfdda2] Submitted process > revertFile (19)
+Dec-18 17:07:31.260 [Task submitter] INFO  nextflow.Session - [93/d3a82d] Submitted process > revertFile (28)
+Dec-18 17:07:31.293 [Task submitter] INFO  nextflow.Session - [83/0873b5] Submitted process > revertFile (24)
+Dec-18 17:07:31.327 [Task submitter] INFO  nextflow.Session - [20/2954fe] Submitted process > revertFile (25)
+Dec-18 17:07:31.358 [Task submitter] INFO  nextflow.Session - [14/c92b35] Submitted process > revertFile (21)
+Dec-18 17:07:31.387 [Task submitter] INFO  nextflow.Session - [78/216531] Submitted process > revertFile (22)
+Dec-18 17:07:31.421 [Task submitter] INFO  nextflow.Session - [33/6083ad] Submitted process > revertFile (29)
+Dec-18 17:07:31.454 [Task submitter] INFO  nextflow.Session - [f8/6302db] Submitted process > revertFile (20)
+Dec-18 17:07:31.487 [Task submitter] INFO  nextflow.Session - [ee/6feb8c] Submitted process > revertFile (10)
+Dec-18 17:07:31.518 [Task submitter] INFO  nextflow.Session - [5c/a98711] Submitted process > revertFile (6)
+Dec-18 17:07:31.549 [Task submitter] INFO  nextflow.Session - [d2/5f38ba] Submitted process > revertFile (30)
+Dec-18 17:07:31.580 [Task submitter] INFO  nextflow.Session - [a7/eee700] Submitted process > revertFile (26)
+Dec-18 17:07:31.612 [Task submitter] INFO  nextflow.Session - [8e/b15229] Submitted process > revertFile (31)
+Dec-18 17:07:31.644 [Task submitter] INFO  nextflow.Session - [49/21be78] Submitted process > revertFile (2)
+Dec-18 17:07:31.676 [Task submitter] INFO  nextflow.Session - [da/ab10c0] Submitted process > revertFile (1)
+Dec-18 17:07:31.708 [Task submitter] INFO  nextflow.Session - [ac/1eb78e] Submitted process > revertFile (23)
+Dec-18 17:07:31.738 [Task submitter] INFO  nextflow.Session - [4d/b05625] Submitted process > revertFile (32)
+Dec-18 17:07:31.769 [Task submitter] INFO  nextflow.Session - [b1/a80e87] Submitted process > revertFile (9)
+Dec-18 17:07:31.803 [Task submitter] INFO  nextflow.Session - [b5/ceb986] Submitted process > revertFile (5)
+Dec-18 17:07:31.834 [Task submitter] INFO  nextflow.Session - [c0/9eefd4] Submitted process > revertFile (12)
+Dec-18 17:07:31.864 [Task submitter] INFO  nextflow.Session - [50/496f40] Submitted process > revertFile (17)
+Dec-18 17:07:31.894 [Task submitter] INFO  nextflow.Session - [ef/8eceb3] Submitted process > revertFile (15)
+Dec-18 17:07:31.927 [Task submitter] INFO  nextflow.Session - [98/fdb2bb] Submitted process > revertFile (4)
+Dec-18 17:07:31.957 [Task submitter] INFO  nextflow.Session - [8a/19ecc7] Submitted process > revertFile (34)
+Dec-18 17:07:31.990 [Task submitter] INFO  nextflow.Session - [5c/b24253] Submitted process > revertFile (11)
+Dec-18 17:07:32.019 [Task submitter] INFO  nextflow.Session - [31/598a02] Submitted process > revertFile (33)
+Dec-18 17:07:32.049 [Task submitter] INFO  nextflow.Session - [5f/95eb09] Submitted process > revertFile (38)
+Dec-18 17:07:32.086 [Task submitter] INFO  nextflow.Session - [c3/12cd09] Submitted process > revertFile (36)
+Dec-18 17:07:32.127 [Task submitter] INFO  nextflow.Session - [36/be7494] Submitted process > revertFile (35)
+Dec-18 17:07:32.159 [Task submitter] INFO  nextflow.Session - [24/313a1e] Submitted process > revertFile (42)
+Dec-18 17:07:32.202 [Task submitter] INFO  nextflow.Session - [b6/008eb7] Submitted process > revertFile (40)
+Dec-18 17:07:32.258 [Task submitter] INFO  nextflow.Session - [d3/a6c600] Submitted process > revertFile (37)
+Dec-18 17:07:32.313 [Task submitter] INFO  nextflow.Session - [47/0e5206] Submitted process > revertFile (39)
+Dec-18 17:07:32.371 [Task submitter] INFO  nextflow.Session - [63/c54b65] Submitted process > revertFile (41)
+Dec-18 17:07:32.429 [Task submitter] INFO  nextflow.Session - [ce/f5c523] Submitted process > revertFile (43)
+Dec-18 17:07:32.486 [Task submitter] INFO  nextflow.Session - [43/cf423b] Submitted process > revertFile (44)
+Dec-18 17:07:32.545 [Task submitter] INFO  nextflow.Session - [31/164b76] Submitted process > revertFile (45)
+Dec-18 17:07:32.606 [Task submitter] INFO  nextflow.Session - [8b/1d2a48] Submitted process > revertFile (46)
+Dec-18 17:07:32.665 [Task submitter] INFO  nextflow.Session - [1c/9435c6] Submitted process > revertFile (48)
+Dec-18 17:07:32.726 [Task submitter] INFO  nextflow.Session - [1a/97ccc1] Submitted process > revertFile (47)
+Dec-18 17:07:32.791 [Task submitter] INFO  nextflow.Session - [39/a82d50] Submitted process > revertFile (49)
+Dec-18 17:07:32.852 [Task submitter] INFO  nextflow.Session - [68/a0dece] Submitted process > revertFile (51)
+Dec-18 17:07:32.915 [Task submitter] INFO  nextflow.Session - [86/80beb1] Submitted process > revertFile (50)
+Dec-18 17:07:32.984 [Task submitter] INFO  nextflow.Session - [4a/0e3896] Submitted process > revertFile (52)
+Dec-18 17:07:33.049 [Task submitter] INFO  nextflow.Session - [02/00677f] Submitted process > revertFile (53)
+Dec-18 17:07:33.114 [Task submitter] INFO  nextflow.Session - [bf/7d2ca6] Submitted process > revertFile (55)
+Dec-18 17:07:33.176 [Task submitter] INFO  nextflow.Session - [bf/2ccba0] Submitted process > revertFile (54)
+Dec-18 17:07:33.236 [Task submitter] INFO  nextflow.Session - [09/e78cc3] Submitted process > revertFile (56)
+Dec-18 17:07:33.301 [Task submitter] INFO  nextflow.Session - [24/915e48] Submitted process > revertFile (83)
+Dec-18 17:07:33.364 [Task submitter] INFO  nextflow.Session - [68/842a6a] Submitted process > revertFile (58)
+Dec-18 17:07:33.429 [Task submitter] INFO  nextflow.Session - [94/25e04e] Submitted process > revertFile (57)
+Dec-18 17:07:33.496 [Task submitter] INFO  nextflow.Session - [95/6848a4] Submitted process > revertFile (59)
+Dec-18 17:07:33.563 [Task submitter] INFO  nextflow.Session - [76/2560c9] Submitted process > revertFile (60)
+Dec-18 17:07:33.627 [Task submitter] INFO  nextflow.Session - [4e/ea4bdd] Submitted process > revertFile (61)
+Dec-18 17:07:33.694 [Task submitter] INFO  nextflow.Session - [7f/4d76bb] Submitted process > revertFile (62)
+Dec-18 17:07:33.760 [Task submitter] INFO  nextflow.Session - [6c/fba9a8] Submitted process > revertFile (63)
+Dec-18 17:07:33.829 [Task submitter] INFO  nextflow.Session - [49/c7629c] Submitted process > revertFile (67)
+Dec-18 17:07:33.896 [Task submitter] INFO  nextflow.Session - [55/233919] Submitted process > revertFile (64)
+Dec-18 17:07:33.965 [Task submitter] INFO  nextflow.Session - [db/6b65a0] Submitted process > revertFile (65)
+Dec-18 17:07:34.036 [Task submitter] INFO  nextflow.Session - [63/33004d] Submitted process > revertFile (69)
+Dec-18 17:07:34.108 [Task submitter] INFO  nextflow.Session - [68/56d567] Submitted process > revertFile (68)
+Dec-18 17:07:34.183 [Task submitter] INFO  nextflow.Session - [57/bc71e3] Submitted process > revertFile (66)
+Dec-18 17:07:34.253 [Task submitter] INFO  nextflow.Session - [c0/b29e2d] Submitted process > revertFile (71)
+Dec-18 17:07:34.329 [Task submitter] INFO  nextflow.Session - [18/1678d9] Submitted process > revertFile (97)
+Dec-18 17:07:34.403 [Task submitter] INFO  nextflow.Session - [85/f237a6] Submitted process > revertFile (70)
+Dec-18 17:07:34.475 [Task submitter] INFO  nextflow.Session - [6d/a80167] Submitted process > revertFile (72)
+Dec-18 17:07:34.548 [Task submitter] INFO  nextflow.Session - [db/dd9284] Submitted process > revertFile (73)
+Dec-18 17:07:34.622 [Task submitter] INFO  nextflow.Session - [15/3b164d] Submitted process > revertFile (74)
+Dec-18 17:07:34.696 [Task submitter] INFO  nextflow.Session - [1a/453cb9] Submitted process > revertFile (76)
+Dec-18 17:07:34.766 [Task submitter] INFO  nextflow.Session - [d6/759630] Submitted process > revertFile (75)
+Dec-18 17:07:34.839 [Task submitter] INFO  nextflow.Session - [a2/2d1239] Submitted process > revertFile (77)
+Dec-18 17:07:34.915 [Task submitter] INFO  nextflow.Session - [0a/8c16b0] Submitted process > revertFile (78)
+Dec-18 17:07:34.986 [Task submitter] INFO  nextflow.Session - [30/e80a7b] Submitted process > revertFile (79)
+Dec-18 17:07:35.059 [Task submitter] INFO  nextflow.Session - [49/6d7551] Submitted process > revertFile (80)
+Dec-18 17:07:35.136 [Task submitter] INFO  nextflow.Session - [f5/9b85eb] Submitted process > revertFile (81)
+Dec-18 17:07:35.214 [Task submitter] INFO  nextflow.Session - [0f/d941e2] Submitted process > revertFile (82)
+Dec-18 17:07:35.287 [Task submitter] INFO  nextflow.Session - [a2/8a7188] Submitted process > revertFile (84)
+Dec-18 17:07:35.363 [Task submitter] INFO  nextflow.Session - [5f/bbb14d] Submitted process > revertFile (85)
+Dec-18 17:07:35.440 [Task submitter] INFO  nextflow.Session - [08/6a2ad0] Submitted process > revertFile (86)
+Dec-18 17:07:35.517 [Task submitter] INFO  nextflow.Session - [e9/59d91d] Submitted process > revertFile (87)
+Dec-18 17:07:35.592 [Task submitter] INFO  nextflow.Session - [0a/0b77cb] Submitted process > revertFile (88)
+Dec-18 17:07:35.670 [Task submitter] INFO  nextflow.Session - [f6/e427e1] Submitted process > revertFile (89)
+Dec-18 17:07:35.749 [Task submitter] INFO  nextflow.Session - [c2/4ee68a] Submitted process > revertFile (91)
+Dec-18 17:07:35.825 [Task submitter] INFO  nextflow.Session - [a4/41d29f] Submitted process > revertFile (90)
+Dec-18 17:07:35.917 [Task submitter] INFO  nextflow.Session - [dd/90a9b8] Submitted process > revertFile (92)
+Dec-18 17:07:35.995 [Task submitter] INFO  nextflow.Session - [d9/f74c1e] Submitted process > revertFile (94)
+Dec-18 17:07:36.072 [Task submitter] INFO  nextflow.Session - [10/bd67b1] Submitted process > revertFile (93)
+Dec-18 17:07:36.155 [Task submitter] INFO  nextflow.Session - [96/d5e6c6] Submitted process > revertFile (95)
+Dec-18 17:07:36.234 [Task submitter] INFO  nextflow.Session - [10/8786ec] Submitted process > revertFile (96)
+Dec-18 17:07:36.314 [Task submitter] INFO  nextflow.Session - [c3/7bee6c] Submitted process > revertFile (100)
+Dec-18 17:07:36.393 [Task submitter] INFO  nextflow.Session - [bf/3def38] Submitted process > revertFile (99)
+Dec-18 17:07:36.472 [Task submitter] INFO  nextflow.Session - [fa/eb3813] Submitted process > revertFile (98)
+Dec-18 17:07:41.132 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 15; name: revertFile (14); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/3e/7e3f1fdfd88069671515b14b7df637]
+Dec-18 17:07:41.194 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 14; name: revertFile (13); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/2e/7aa014db47be6176d19a15e6a12cc3]
+Dec-18 17:07:51.873 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: revertFile (4); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/98/fdb2bb3176140c2d6a178c25c05edf]
+Dec-18 17:07:53.707 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 101; name: revertFile (100); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/c3/7bee6c92d0217d435cf71f1bb37b67]
+Dec-18 17:07:53.769 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 100; name: revertFile (99); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/bf/3def38bc36470f4300ee1d9feafd5d]
+Dec-18 17:07:58.211 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 77; name: revertFile (76); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/1a/453cb98931d7ad35a8c0c94dfc6264]
+Dec-18 17:07:58.568 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 89; name: revertFile (88); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/0a/0b77cbd652d6ce080d69e8f7ed4ec3]
+Dec-18 17:07:58.848 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 99; name: revertFile (98); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/fa/eb38139fc3de013811ac8bf6a1bfab]
+Dec-18 17:08:08.488 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 91; name: revertFile (90); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a4/41d29f8a77ea3719ac5b1fbb983391]
+Dec-18 17:08:08.525 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 93; name: revertFile (92); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/dd/90a9b879d1705f4897adadc2c80a4c]
+Dec-18 17:08:08.570 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 95; name: revertFile (94); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/d9/f74c1e8409c09fbbc35360593687ae]
+Dec-18 17:08:08.617 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 94; name: revertFile (93); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/10/bd67b1be63d2d47842e656269293b1]
+Dec-18 17:08:08.661 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 96; name: revertFile (95); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/96/d5e6c6d571e18f3c2fcfb51c0cbad0]
+Dec-18 17:08:08.709 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 97; name: revertFile (96); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/10/8786ec15bdca6970ad614a451afa06]
+Dec-18 17:08:23.399 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 85; name: revertFile (84); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a2/8a7188047e30eaafecf11c88e19903]
+Dec-18 17:08:23.442 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 86; name: revertFile (85); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/5f/bbb14d8db2ebfc72a15967a85c02ce]
+Dec-18 17:08:23.479 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 87; name: revertFile (86); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/08/6a2ad0e43fcacdf0becd867a98582f]
+Dec-18 17:08:23.523 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 88; name: revertFile (87); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/e9/59d91dfc3bfadf3ae8950f6529f644]
+Dec-18 17:08:23.579 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 90; name: revertFile (89); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/f6/e427e1262c32714eb0466f7ad8dcc1]
+Dec-18 17:08:23.625 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 92; name: revertFile (91); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/c2/4ee68a1b5ab85774ca15ce489cf17d]
+Dec-18 17:08:38.296 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 81; name: revertFile (80); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/49/6d75510739702f1c97c2850aba95ff]
+Dec-18 17:08:38.346 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 82; name: revertFile (81); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/f5/9b85eb2b8d67867c1fe5cb02eaf787]
+Dec-18 17:08:38.398 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 83; name: revertFile (82); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/0f/d941e27e383c0f4ed068720f973fdd]
+Dec-18 17:08:43.260 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 78; name: revertFile (77); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a2/2d1239accdd903ac31f634c387babb]
+Dec-18 17:08:43.301 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 79; name: revertFile (78); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/0a/8c16b08e6f2ee4d25d4e309aae6b86]
+Dec-18 17:08:43.345 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 80; name: revertFile (79); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/30/e80a7b2d1d163101a4435712c9698f]
+Dec-18 17:08:53.040 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 74; name: revertFile (73); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/db/dd92845f9dbc2ce7b4589fc039e923]
+Dec-18 17:08:53.088 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 75; name: revertFile (74); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/15/3b164d0d716c877a8068cbdd511beb]
+Dec-18 17:08:53.134 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 76; name: revertFile (75); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/d6/759630115c4d8e6f8ee2c7fb0054e8]
+Dec-18 17:08:58.082 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 98; name: revertFile (97); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/18/1678d91022e474b97cea111a79bc02]
+Dec-18 17:08:58.122 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 71; name: revertFile (70); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/85/f237a6b66ded502b5117b9b0632176]
+Dec-18 17:08:58.161 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 73; name: revertFile (72); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/6d/a80167b22af767ef450267d4983252]
+Dec-18 17:09:07.916 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 69; name: revertFile (68); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/68/56d5676119ffb22561d0f8b8e293d1]
+Dec-18 17:09:07.962 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 67; name: revertFile (66); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/57/bc71e3901ce035c466efb81c967e8c]
+Dec-18 17:09:08.010 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 72; name: revertFile (71); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/c0/b29e2da5e4378b3acd4a9e689badeb]
+Dec-18 17:09:12.922 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 65; name: revertFile (64); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/55/23391995144bba61b4728f9e669697]
+Dec-18 17:09:12.961 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 66; name: revertFile (65); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/db/6b65a0fddb44abca960f7fa79939aa]
+Dec-18 17:09:13.004 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 70; name: revertFile (69); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/63/33004d69d0766d7e7170ff1b7c32be]
+Dec-18 17:09:21.819 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 13; name: revertFile (12); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/c0/9eefd4632f063b44fa82e2dac4300b]
+Dec-18 17:09:22.805 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 64; name: revertFile (63); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/6c/fba9a81d82f6b1e5d77c7643d2a39a]
+Dec-18 17:09:22.855 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 68; name: revertFile (67); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/49/c7629c3bd1db77ec74a0e2fa79a062]
+Dec-18 17:09:26.852 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 18; name: revertFile (17); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/50/496f4068e812d57789eb6ec854fd3b]
+Dec-18 17:09:26.892 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 16; name: revertFile (15); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/ef/8eceb3b160e7d064611b35419212d9]
+Dec-18 17:09:26.937 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 35; name: revertFile (34); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/8a/19ecc7c80a081401811f0fe6b09257]
+Dec-18 17:09:36.863 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 12; name: revertFile (11); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/5c/b242531e33dc174d609f10caf30e4c]
+Dec-18 17:09:36.914 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 34; name: revertFile (33); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/31/598a024653bf74668b0dd3f89c15d0]
+Dec-18 17:09:36.961 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 39; name: revertFile (38); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/5f/95eb09ebe80f925c64cb2a5153af55]
+Dec-18 17:09:37.733 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 63; name: revertFile (62); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/7f/4d76bb1139bddcb4373117372e11f1]
+Dec-18 17:09:41.846 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 37; name: revertFile (36); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/c3/12cd09a308b2a3d15272a23960d047]
+Dec-18 17:09:41.887 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 36; name: revertFile (35); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/36/be7494262be59d62ad42a5ef89b54e]
+Dec-18 17:09:52.379 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 84; name: revertFile (83); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/24/915e48ad96f01d12f76ecfc9a86377]
+Dec-18 17:09:52.417 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 59; name: revertFile (58); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/68/842a6a1465689103cf3e9098826cb9]
+Dec-18 17:09:52.453 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 58; name: revertFile (57); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/94/25e04e1c8fe05c73429e155a5a2561]
+Dec-18 17:09:52.498 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 60; name: revertFile (59); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/95/6848a4088b534fdca5f8113e6b27d1]
+Dec-18 17:09:52.545 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 61; name: revertFile (60); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/76/2560c98656f3706159e78652a14426]
+Dec-18 17:09:52.593 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 62; name: revertFile (61); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/4e/ea4bdd93f2cc1ab3409f878c3db5a8]
+Dec-18 17:10:07.146 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 51; name: revertFile (50); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/86/80beb1f7b3df40db59d5cc422a4c8f]
+Dec-18 17:10:07.193 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 53; name: revertFile (52); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/4a/0e3896038d5a08228cc65a5f2f4c31]
+Dec-18 17:10:07.234 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 54; name: revertFile (53); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/02/00677f5092a1dde3946266b80ef0b1]
+Dec-18 17:10:07.287 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 56; name: revertFile (55); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/bf/7d2ca67726f5c4146d0dcfaebb5239]
+Dec-18 17:10:07.334 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 55; name: revertFile (54); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/bf/2ccba0bb8628b2d887e165f12b63bd]
+Dec-18 17:10:07.379 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 57; name: revertFile (56); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/09/e78cc3d27b07c246b391cff67e72f9]
+Dec-18 17:10:21.971 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 46; name: revertFile (45); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/31/164b7616865d2d77ca5879b5b943e5]
+Dec-18 17:10:22.008 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 47; name: revertFile (46); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/8b/1d2a48a4d0666f14a2cf388dd2902f]
+Dec-18 17:10:22.045 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 49; name: revertFile (48); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/1c/9435c688b4d9cd406783a7e8fe2380]
+Dec-18 17:10:22.093 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 48; name: revertFile (47); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/1a/97ccc105cf52f1ef5fcf4de4e7edea]
+Dec-18 17:10:22.138 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 50; name: revertFile (49); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/39/a82d50908bb80f157543814a47f6cc]
+Dec-18 17:10:22.183 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 52; name: revertFile (51); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/68/a0dece8cb7efe06fa47723ff064990]
+Dec-18 17:10:36.858 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 41; name: revertFile (40); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/b6/008eb79a34850dfbe4fff762d8adbe]
+Dec-18 17:10:36.894 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 38; name: revertFile (37); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/d3/a6c60016068eec558a6b56aab15908]
+Dec-18 17:10:36.933 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 40; name: revertFile (39); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/47/0e52060f8d1dd59135e8269f2de953]
+Dec-18 17:10:36.977 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 42; name: revertFile (41); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/63/c54b65aa7f6c4f81f88f1947a13190]
+Dec-18 17:10:37.023 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 44; name: revertFile (43); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/ce/f5c523ec6cc78155927d89af2ddffa]
+Dec-18 17:10:37.075 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 45; name: revertFile (44); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/43/cf423bd199e4a31feef5257f806412]
+Dec-18 17:10:51.611 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: revertFile (1); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/da/ab10c09ec7ed744dfc15c8e0a70e29]
+Dec-18 17:10:51.647 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 24; name: revertFile (23); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/ac/1eb78efeb1ce349b0b8197bcd2ab7a]
+Dec-18 17:10:51.688 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 33; name: revertFile (32); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/4d/b056254b2c749d3ccd63a0a59ea929]
+Dec-18 17:10:51.731 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: revertFile (9); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/b1/a80e874aaf7519fbeaa7c93954bf1d]
+Dec-18 17:10:51.777 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: revertFile (5); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/b5/ceb986b1795b4476f58488954ab3e1]
+Dec-18 17:10:51.824 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 43; name: revertFile (42); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/24/313a1eaead7ad2f5a0b09af20ba48c]
+Dec-18 17:11:06.485 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: revertFile (10); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/ee/6feb8c9f546231b2b9a6de51d20308]
+Dec-18 17:11:06.527 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: revertFile (6); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/5c/a98711d6970683a499453528a83ac0]
+Dec-18 17:11:06.564 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 31; name: revertFile (30); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/d2/5f38ba69f429c8d59303ad91472756]
+Dec-18 17:11:06.613 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 27; name: revertFile (26); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a7/eee70017f7da8398d420df888d16eb]
+Dec-18 17:11:06.660 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 32; name: revertFile (31); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/8e/b15229ea66807f0342e8bf1c7431b6]
+Dec-18 17:11:06.708 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: revertFile (2); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/49/21be784d18c01ebaf59722bd554c56]
+Dec-18 17:11:21.359 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 25; name: revertFile (24); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/83/0873b516c43fadbef6c7206df68bc9]
+Dec-18 17:11:21.397 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 26; name: revertFile (25); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/20/2954fe393c30be53f27fbae5c4f626]
+Dec-18 17:11:21.433 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 22; name: revertFile (21); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/14/c92b35831d3a3696ba5c2d68b40044]
+Dec-18 17:11:21.474 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 23; name: revertFile (22); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/78/2165318d287abf972fd98f7926f3cd]
+Dec-18 17:11:21.519 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 30; name: revertFile (29); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/33/6083ad690f3c847252bbce62094eae]
+Dec-18 17:11:21.566 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 21; name: revertFile (20); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/f8/6302db96ccc80dae7b563bca5d6c4a]
+Dec-18 17:11:36.185 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: revertFile (3); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/84/2ac93265bbe5b05892f2b68a7bbdb3]
+Dec-18 17:11:36.222 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 19; name: revertFile (18); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a8/3b9dfc9594108919a89da640c1002d]
+Dec-18 17:11:36.260 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 17; name: revertFile (16); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/f0/163ed7b7501858eff6e7b8f5448f07]
+Dec-18 17:11:36.305 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: revertFile (8); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/7d/a21cc4dde58b0c158b41e0a69aef9c]
+Dec-18 17:11:36.354 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 20; name: revertFile (19); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/b3/bfdda216acd83f438637ff18643e51]
+Dec-18 17:11:36.401 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 29; name: revertFile (28); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/93/d3a82db0143456980947295180a6d8]
+Dec-18 17:11:51.134 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 28; name: revertFile (27); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/6f/6163083e5dbc859915f01654da069b]
+Dec-18 17:11:51.183 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: revertFile (7); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/f9/077759c851cfb92e2b8438463f430b]
+Dec-18 17:11:51.185 [main] DEBUG nextflow.Session - Session await > all processes finished
+Dec-18 17:11:51.190 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Dec-18 17:11:51.202 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=101; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=1h 29m 11s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=9; peakCpus=90; peakMemory=90 GB; ]
+Dec-18 17:11:51.202 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Dec-18 17:11:51.204 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Dec-18 17:11:51.809 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+Dec-18 17:11:51.958 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Dec-18 17:11:51.980 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Dec-18 17:11:51.980 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

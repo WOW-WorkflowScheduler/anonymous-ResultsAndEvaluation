@@ -1,0 +1,495 @@
+Jan-11 02:52:00.636 [main] DEBUG nextflow.cli.Launcher - $> nextflow run /input/Synthetic_Cycles_200 -c /experiments/experiment/Synthetic_Cycles_200/nextflow.config -c /experiments/experiment/nextflow_la.config -c /experiments/experiment/nextflow_ceph.config
+Jan-11 02:52:00.749 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.07.0-edge
+Jan-11 02:52:00.776 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/.nextflow/plugins; core-plugins: nf-amazon@2.1.0,nf-azure@1.1.4,nf-cloudcache@0.1.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.1,nf-tower@1.5.15,nf-wave@0.11.0
+Jan-11 02:52:00.796 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jan-11 02:52:00.797 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jan-11 02:52:00.801 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Jan-11 02:52:00.808 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jan-11 02:52:00.836 [main] DEBUG nextflow.scm.AssetManager - Project manifest does not exist: /input/Synthetic_Cycles_200/nextflow.config (No such file or directory)
+Jan-11 02:52:00.865 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /experiments/experiment/Synthetic_Cycles_200/nextflow.config
+Jan-11 02:52:00.870 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /experiments/experiment/nextflow_la.config
+Jan-11 02:52:00.875 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /experiments/experiment/nextflow_ceph.config
+Jan-11 02:52:00.875 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /experiments/experiment/Synthetic_Cycles_200/nextflow.config
+Jan-11 02:52:00.876 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /experiments/experiment/nextflow_la.config
+Jan-11 02:52:00.876 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /experiments/experiment/nextflow_ceph.config
+Jan-11 02:52:00.898 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Jan-11 02:52:01.497 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Jan-11 02:52:01.706 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Jan-11 02:52:01.751 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Jan-11 02:52:01.771 [main] INFO  nextflow.cli.CmdRun - Launching `/input/Synthetic_Cycles_200/main.nf` [kickass_kirch] DSL2 - revision: 821f053621
+Jan-11 02:52:01.772 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jan-11 02:52:01.772 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Jan-11 02:52:01.781 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /.nextflow/secrets/store.json
+Jan-11 02:52:01.783 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@4277127c] - activable => nextflow.secret.LocalSecretsProvider@4277127c
+Jan-11 02:52:01.835 [main] DEBUG nextflow.Session - Session UUID: 3aac96e0-44d9-41a1-96ea-166a6d30cda8
+Jan-11 02:52:01.835 [main] DEBUG nextflow.Session - Run name: kickass_kirch
+Jan-11 02:52:01.835 [main] DEBUG nextflow.Session - Executor pool size: 32
+Jan-11 02:52:01.841 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Jan-11 02:52:01.852 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=96; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jan-11 02:52:01.876 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.07.0-edge build 5875
+  Created: 28-07-2023 20:27 UTC (20:27 GMT)
+  System: Linux 5.4.0-169-generic
+  Runtime: Groovy 3.0.18 on OpenJDK 64-Bit Server VM 17.0.6+10-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 135827@nextflow [10.233.76.29]
+  CPUs: 32 - Mem: 125.7 GB (100.7 GB) - Swap: 0 (0)
+Jan-11 02:52:01.937 [main] DEBUG nextflow.Session - Work-dir: /input/data/work [ceph]
+Jan-11 02:52:01.942 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /input/Synthetic_Cycles_200/bin
+Jan-11 02:52:01.952 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jan-11 02:52:01.960 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jan-11 02:52:01.988 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jan-11 02:52:01.995 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 33; maxThreads: 1000
+Jan-11 02:52:02.245 [main] DEBUG nextflow.Session - Session start
+Jan-11 02:52:02.251 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /input/data/output/trace.csv
+Jan-11 02:52:02.727 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jan-11 02:52:02.919 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:task_baseline_cycles` matches process task_baseline_cycles
+Jan-11 02:52:02.927 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: k8s
+Jan-11 02:52:02.927 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'k8s'
+Jan-11 02:52:02.935 [main] DEBUG nextflow.executor.Executor - [warm up] executor > k8s
+Jan-11 02:52:02.962 [main] DEBUG n.processor.TaskPollingMonitor - Creating task monitor for executor 'k8s' > capacity: 300; pollInterval: 5s; dumpInterval: 5m; schedulerBatch: null
+Jan-11 02:52:02.967 [main] DEBUG nextflow.k8s.client.ConfigDiscovery - K8s config file does not exist: /root/.kube/config
+Jan-11 02:52:02.977 [main] DEBUG nextflow.k8s.K8sExecutor - [K8s] config=[localPath:/localdata, localStorageMountPath:/localdata, scheduler:[strategy:LAv2, name:workflow-scheduler, autoClose:false, nodeSelector:usedby=anonymized, container:anonymized/test1:sch_v194], storage:[type:copy, workdir:/localdata/localwork/, nodeSelector:usedby=anonymized, imageName:anonymized/test1:ftp_v122], debug:[yaml:true], namespace:anonymized, serviceAccount:nextflow, workDir:/input/data/work/, projectDir:/input/data/project/, imagePullPolicy:IfNotPresent, launchDir:/input/data/launch/, runAsUser:0, fetchNodeName:true, storageMountPath:/input, pod:[nodeSelector:usedby=anonymized], storageClaimName:ceph-data]; API client config=ClientConfig[ server=10.233.0.1:443, namespace=anonymized, serviceAccount=nextflow, token=eyJhbGciOiJ.., sslCert=LS0tLS1CRUd.., clientCert=-, clientKey=-, verifySsl=false, fromFile=true, httpReadTimeout=null, httpConnectTimeout=null, maxErrorRetry=4 ]
+Jan-11 02:52:03.535 [main] DEBUG nextflow.k8s.K8sExecutor - Created K8s configMap with name: nf-get-stat-41cac373
+Jan-11 02:52:04.411 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:task_cycles` matches process task_cycles
+Jan-11 02:52:04.413 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: k8s
+Jan-11 02:52:04.413 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'k8s'
+Jan-11 02:52:04.463 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:task_fertilizer_increase_cycles` matches process task_fertilizer_increase_cycles
+Jan-11 02:52:04.465 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: k8s
+Jan-11 02:52:04.465 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'k8s'
+Jan-11 02:52:04.513 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:task_cycles_fertilizer_increase_output_parser` matches process task_cycles_fertilizer_increase_output_parser
+Jan-11 02:52:04.515 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: k8s
+Jan-11 02:52:04.515 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'k8s'
+Jan-11 02:52:04.560 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:task_cycles_output_summary` matches process task_cycles_output_summary
+Jan-11 02:52:04.562 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: k8s
+Jan-11 02:52:04.562 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'k8s'
+Jan-11 02:52:04.599 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:task_cycles_fertilizer_increase_output_summary` matches process task_cycles_fertilizer_increase_output_summary
+Jan-11 02:52:04.600 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: k8s
+Jan-11 02:52:04.600 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'k8s'
+Jan-11 02:52:04.635 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:task_cycles_plots` matches process task_cycles_plots
+Jan-11 02:52:04.637 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: k8s
+Jan-11 02:52:04.637 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'k8s'
+Jan-11 02:52:04.650 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: task_cycles, task_fertilizer_increase_cycles, task_cycles_fertilizer_increase_output_summary, task_cycles_output_summary, task_cycles_plots, task_baseline_cycles, task_cycles_fertilizer_increase_output_parser
+Jan-11 02:52:04.652 [main] DEBUG nextflow.Session - Igniting dataflow network (8)
+Jan-11 02:52:04.658 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /input/input/; pattern: *; options: [:]
+Jan-11 02:52:04.659 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > task_baseline_cycles
+Jan-11 02:52:04.659 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > task_cycles
+Jan-11 02:52:04.660 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > task_fertilizer_increase_cycles
+Jan-11 02:52:04.660 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > task_cycles_fertilizer_increase_output_parser
+Jan-11 02:52:04.660 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > task_cycles_output_summary
+Jan-11 02:52:04.660 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > task_cycles_fertilizer_increase_output_summary
+Jan-11 02:52:04.660 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > task_cycles_plots
+Jan-11 02:52:04.660 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Jan-11 02:52:04.660 [main] DEBUG nextflow.Session - Session await
+Jan-11 02:52:05.081 [Task submitter] INFO  nextflow.Session - [c6/7caeab] Submitted process > task_baseline_cycles (4)
+Jan-11 02:52:05.169 [Task submitter] INFO  nextflow.Session - [1b/1bbcd9] Submitted process > task_baseline_cycles (30)
+Jan-11 02:52:05.253 [Task submitter] INFO  nextflow.Session - [a8/5e7a26] Submitted process > task_baseline_cycles (8)
+Jan-11 02:52:05.320 [Task submitter] INFO  nextflow.Session - [17/dd4736] Submitted process > task_baseline_cycles (32)
+Jan-11 02:52:05.389 [Task submitter] INFO  nextflow.Session - [19/f3c80d] Submitted process > task_baseline_cycles (29)
+Jan-11 02:52:05.453 [Task submitter] INFO  nextflow.Session - [1e/d18bd0] Submitted process > task_baseline_cycles (10)
+Jan-11 02:52:05.516 [Task submitter] INFO  nextflow.Session - [34/3b0169] Submitted process > task_baseline_cycles (5)
+Jan-11 02:52:05.580 [Task submitter] INFO  nextflow.Session - [00/e31ea9] Submitted process > task_baseline_cycles (6)
+Jan-11 02:52:05.647 [Task submitter] INFO  nextflow.Session - [d4/17e7f6] Submitted process > task_baseline_cycles (27)
+Jan-11 02:52:05.709 [Task submitter] INFO  nextflow.Session - [b7/6c902f] Submitted process > task_baseline_cycles (20)
+Jan-11 02:52:05.771 [Task submitter] INFO  nextflow.Session - [a7/2eb6bf] Submitted process > task_baseline_cycles (7)
+Jan-11 02:52:05.830 [Task submitter] INFO  nextflow.Session - [f7/8af532] Submitted process > task_baseline_cycles (22)
+Jan-11 02:52:05.894 [Task submitter] INFO  nextflow.Session - [aa/80557d] Submitted process > task_baseline_cycles (17)
+Jan-11 02:52:05.961 [Task submitter] INFO  nextflow.Session - [13/2f2920] Submitted process > task_baseline_cycles (9)
+Jan-11 02:52:06.027 [Task submitter] INFO  nextflow.Session - [6a/1bc204] Submitted process > task_baseline_cycles (23)
+Jan-11 02:52:06.097 [Task submitter] INFO  nextflow.Session - [3c/689bba] Submitted process > task_baseline_cycles (26)
+Jan-11 02:52:06.159 [Task submitter] INFO  nextflow.Session - [63/8bee60] Submitted process > task_baseline_cycles (31)
+Jan-11 02:52:06.218 [Task submitter] INFO  nextflow.Session - [fa/52a5ce] Submitted process > task_baseline_cycles (14)
+Jan-11 02:52:06.283 [Task submitter] INFO  nextflow.Session - [7c/342b5d] Submitted process > task_baseline_cycles (11)
+Jan-11 02:52:06.345 [Task submitter] INFO  nextflow.Session - [86/8c4b8a] Submitted process > task_baseline_cycles (25)
+Jan-11 02:52:06.464 [Task submitter] INFO  nextflow.Session - [07/55014a] Submitted process > task_baseline_cycles (28)
+Jan-11 02:52:06.544 [Task submitter] INFO  nextflow.Session - [06/6d06ac] Submitted process > task_baseline_cycles (13)
+Jan-11 02:52:06.605 [Task submitter] INFO  nextflow.Session - [17/eecb2e] Submitted process > task_baseline_cycles (1)
+Jan-11 02:52:06.665 [Task submitter] INFO  nextflow.Session - [f8/79f9dc] Submitted process > task_baseline_cycles (15)
+Jan-11 02:52:06.731 [Task submitter] INFO  nextflow.Session - [29/ed7084] Submitted process > task_baseline_cycles (12)
+Jan-11 02:52:06.801 [Task submitter] INFO  nextflow.Session - [54/fd35d3] Submitted process > task_baseline_cycles (18)
+Jan-11 02:52:06.865 [Task submitter] INFO  nextflow.Session - [ad/616bfc] Submitted process > task_baseline_cycles (24)
+Jan-11 02:52:06.928 [Task submitter] INFO  nextflow.Session - [90/3604cb] Submitted process > task_baseline_cycles (16)
+Jan-11 02:52:06.994 [Task submitter] INFO  nextflow.Session - [bf/ec0b9b] Submitted process > task_baseline_cycles (21)
+Jan-11 02:52:07.058 [Task submitter] INFO  nextflow.Session - [93/6f92df] Submitted process > task_baseline_cycles (2)
+Jan-11 02:52:07.125 [Task submitter] INFO  nextflow.Session - [16/efda94] Submitted process > task_baseline_cycles (19)
+Jan-11 02:52:07.187 [Task submitter] INFO  nextflow.Session - [b4/e8ca51] Submitted process > task_baseline_cycles (3)
+Jan-11 02:52:07.250 [Task submitter] INFO  nextflow.Session - [b7/084e46] Submitted process > task_baseline_cycles (39)
+Jan-11 02:52:07.315 [Task submitter] INFO  nextflow.Session - [07/c5cd9a] Submitted process > task_baseline_cycles (43)
+Jan-11 02:52:07.382 [Task submitter] INFO  nextflow.Session - [5c/168f05] Submitted process > task_baseline_cycles (34)
+Jan-11 02:52:07.451 [Task submitter] INFO  nextflow.Session - [a6/d7833d] Submitted process > task_baseline_cycles (46)
+Jan-11 02:52:07.511 [Task submitter] INFO  nextflow.Session - [74/782ed3] Submitted process > task_baseline_cycles (48)
+Jan-11 02:52:07.580 [Task submitter] INFO  nextflow.Session - [75/bfd4da] Submitted process > task_baseline_cycles (41)
+Jan-11 02:52:07.644 [Task submitter] INFO  nextflow.Session - [5f/0c8fb5] Submitted process > task_baseline_cycles (44)
+Jan-11 02:52:07.710 [Task submitter] INFO  nextflow.Session - [dd/0a65f6] Submitted process > task_baseline_cycles (35)
+Jan-11 02:52:07.776 [Task submitter] INFO  nextflow.Session - [73/e67414] Submitted process > task_baseline_cycles (47)
+Jan-11 02:52:07.838 [Task submitter] INFO  nextflow.Session - [e8/a6fc4e] Submitted process > task_baseline_cycles (38)
+Jan-11 02:52:07.904 [Task submitter] INFO  nextflow.Session - [5a/8a462c] Submitted process > task_baseline_cycles (40)
+Jan-11 02:52:07.972 [Task submitter] INFO  nextflow.Session - [0a/cf55d4] Submitted process > task_baseline_cycles (37)
+Jan-11 02:52:08.034 [Task submitter] INFO  nextflow.Session - [4a/61b7bb] Submitted process > task_baseline_cycles (42)
+Jan-11 02:52:08.098 [Task submitter] INFO  nextflow.Session - [0f/fe497f] Submitted process > task_baseline_cycles (36)
+Jan-11 02:52:08.165 [Task submitter] INFO  nextflow.Session - [dd/e892cd] Submitted process > task_baseline_cycles (45)
+Jan-11 02:52:08.232 [Task submitter] INFO  nextflow.Session - [b1/74a0de] Submitted process > task_baseline_cycles (33)
+Jan-11 02:52:43.517 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: task_baseline_cycles (3); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/b4/e8ca511411b792a10929249196a183]
+Jan-11 02:52:43.616 [Task submitter] INFO  nextflow.Session - [d7/0f06b5] Submitted process > task_cycles (1)
+Jan-11 02:52:43.648 [Task submitter] INFO  nextflow.Session - [2d/971580] Submitted process > task_fertilizer_increase_cycles (1)
+Jan-11 02:52:45.162 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 48; name: task_baseline_cycles (48); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/74/782ed3250cee214e27a052ada7c9be]
+Jan-11 02:52:45.212 [Task submitter] INFO  nextflow.Session - [a3/1ce8b1] Submitted process > task_cycles (2)
+Jan-11 02:52:45.241 [Task submitter] INFO  nextflow.Session - [cd/5e5715] Submitted process > task_fertilizer_increase_cycles (2)
+Jan-11 02:52:53.371 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 28; name: task_baseline_cycles (28); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/07/55014ae8f4b56cf72bbaded72bb87b]
+Jan-11 02:52:53.437 [Task submitter] INFO  nextflow.Session - [ca/feca92] Submitted process > task_fertilizer_increase_cycles (3)
+Jan-11 02:52:53.485 [Task submitter] INFO  nextflow.Session - [1a/d20a99] Submitted process > task_cycles (3)
+Jan-11 02:52:58.103 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: task_baseline_cycles (10); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/1e/d18bd03b4f3910cad6a87f5e4551fb]
+Jan-11 02:52:58.160 [Task submitter] INFO  nextflow.Session - [ad/2ee6d3] Submitted process > task_fertilizer_increase_cycles (4)
+Jan-11 02:52:58.193 [Task submitter] INFO  nextflow.Session - [a4/d028dd] Submitted process > task_cycles (4)
+Jan-11 02:52:58.408 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: task_baseline_cycles (9); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/13/2f292026d483a3fcb5db70ce657d7a]
+Jan-11 02:52:58.455 [Task submitter] INFO  nextflow.Session - [4f/6be7d6] Submitted process > task_fertilizer_increase_cycles (5)
+Jan-11 02:52:58.492 [Task submitter] INFO  nextflow.Session - [02/9e5868] Submitted process > task_cycles (5)
+Jan-11 02:52:58.559 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 31; name: task_baseline_cycles (31); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/63/8bee602e9e0f081f0734854aaa2215]
+Jan-11 02:52:58.594 [Task submitter] INFO  nextflow.Session - [7a/1a3773] Submitted process > task_cycles (6)
+Jan-11 02:52:58.620 [Task submitter] INFO  nextflow.Session - [19/249e6a] Submitted process > task_fertilizer_increase_cycles (6)
+Jan-11 02:52:59.221 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 36; name: task_baseline_cycles (36); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/0f/fe497fc577e5571cd41e72b77b4898]
+Jan-11 02:52:59.270 [Task submitter] INFO  nextflow.Session - [29/ca19d8] Submitted process > task_fertilizer_increase_cycles (7)
+Jan-11 02:52:59.283 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 45; name: task_baseline_cycles (45); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/dd/e892cdf5dcd2aea99daa4a663fed2d]
+Jan-11 02:52:59.299 [Task submitter] INFO  nextflow.Session - [98/93269d] Submitted process > task_cycles (7)
+Jan-11 02:52:59.331 [Task submitter] INFO  nextflow.Session - [53/b137ef] Submitted process > task_cycles (8)
+Jan-11 02:52:59.360 [Task submitter] INFO  nextflow.Session - [ef/6c1ad8] Submitted process > task_fertilizer_increase_cycles (8)
+Jan-11 02:52:59.391 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 33; name: task_baseline_cycles (33); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/b1/74a0de6c24f784d7592783381dffed]
+Jan-11 02:52:59.436 [Task submitter] INFO  nextflow.Session - [2f/7a97c6] Submitted process > task_cycles (9)
+Jan-11 02:52:59.470 [Task submitter] INFO  nextflow.Session - [72/bb14e2] Submitted process > task_fertilizer_increase_cycles (9)
+Jan-11 02:53:04.079 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 42; name: task_baseline_cycles (42); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/4a/61b7bbadd3e719512ca57a09a99560]
+Jan-11 02:53:04.165 [Task submitter] INFO  nextflow.Session - [4d/97fe98] Submitted process > task_cycles (10)
+Jan-11 02:53:04.194 [Task submitter] INFO  nextflow.Session - [d8/992dc0] Submitted process > task_fertilizer_increase_cycles (10)
+Jan-11 02:53:13.160 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 30; name: task_baseline_cycles (30); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/1b/1bbcd965bbf7fb2c88eb33000703cc]
+Jan-11 02:53:13.201 [Task submitter] INFO  nextflow.Session - [a0/96ea30] Submitted process > task_cycles (11)
+Jan-11 02:53:13.340 [Task submitter] INFO  nextflow.Session - [1e/aa8bee] Submitted process > task_fertilizer_increase_cycles (11)
+Jan-11 02:53:13.695 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 26; name: task_baseline_cycles (26); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/3c/689bbafb686ea96d0664fb3bd3a8a0]
+Jan-11 02:53:13.796 [Task submitter] INFO  nextflow.Session - [76/a65cd8] Submitted process > task_fertilizer_increase_cycles (12)
+Jan-11 02:53:13.820 [Task submitter] INFO  nextflow.Session - [dd/7ed9dc] Submitted process > task_cycles (12)
+Jan-11 02:53:13.893 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 25; name: task_baseline_cycles (25); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/86/8c4b8a146de798b38c77c5f72724a3]
+Jan-11 02:53:13.933 [Task submitter] INFO  nextflow.Session - [9b/7c51b3] Submitted process > task_cycles (13)
+Jan-11 02:53:14.090 [Task submitter] INFO  nextflow.Session - [18/93119f] Submitted process > task_fertilizer_increase_cycles (13)
+Jan-11 02:53:28.911 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 62; name: task_cycles (7); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/98/93269d4569469b37dcc9a70938938e]
+Jan-11 02:53:30.299 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 64; name: task_fertilizer_increase_cycles (8); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/ef/6c1ad8a770303064bea2d164780909]
+Jan-11 02:53:30.369 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 66; name: task_cycles (9); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/2f/7a97c6ee184d2e15097c4f94ac259e]
+Jan-11 02:53:31.959 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 65; name: task_fertilizer_increase_cycles (9); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/72/bb14e24b1bd7ab382f9d78018e15c7]
+Jan-11 02:53:32.603 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 67; name: task_cycles (10); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/4d/97fe98b6bec22677ae2b8d8074c701]
+Jan-11 02:53:32.717 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 68; name: task_fertilizer_increase_cycles (10); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/d8/992dc073ca8ce8ff1a474bbb24e54a]
+Jan-11 02:53:33.279 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: task_baseline_cycles (1); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/17/eecb2e233459bb7a506677fb2bef76]
+Jan-11 02:53:33.332 [Task submitter] INFO  nextflow.Session - [36/c1da8f] Submitted process > task_cycles (14)
+Jan-11 02:53:33.367 [Task submitter] INFO  nextflow.Session - [8a/11a8a1] Submitted process > task_fertilizer_increase_cycles (14)
+Jan-11 02:53:33.375 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 15; name: task_baseline_cycles (15); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/f8/79f9dc863f995f61d155ebe4aa4cf8]
+Jan-11 02:53:33.407 [Task submitter] INFO  nextflow.Session - [1c/2e2126] Submitted process > task_cycles (15)
+Jan-11 02:53:33.439 [Task submitter] INFO  nextflow.Session - [63/af6e72] Submitted process > task_fertilizer_increase_cycles (15)
+Jan-11 02:53:33.564 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: task_baseline_cycles (2); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/93/6f92dff96239b13e27d20805e5e737]
+Jan-11 02:53:33.605 [Task submitter] INFO  nextflow.Session - [28/575186] Submitted process > task_cycles (16)
+Jan-11 02:53:33.633 [Task submitter] INFO  nextflow.Session - [9d/06035e] Submitted process > task_fertilizer_increase_cycles (16)
+Jan-11 02:53:33.646 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 19; name: task_baseline_cycles (19); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/16/efda94f9d57d1a8c027433754a4072]
+Jan-11 02:53:33.684 [Task submitter] INFO  nextflow.Session - [cb/061cf3] Submitted process > task_fertilizer_increase_cycles (17)
+Jan-11 02:53:33.714 [Task submitter] INFO  nextflow.Session - [17/685f2d] Submitted process > task_cycles (17)
+Jan-11 02:53:33.741 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 39; name: task_baseline_cycles (39); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/b7/084e462c1f18ad880213bb4b69ece8]
+Jan-11 02:53:33.779 [Task submitter] INFO  nextflow.Session - [fe/afd964] Submitted process > task_fertilizer_increase_cycles (18)
+Jan-11 02:53:33.809 [Task submitter] INFO  nextflow.Session - [6a/df246d] Submitted process > task_cycles (18)
+Jan-11 02:53:33.860 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 43; name: task_baseline_cycles (43); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/07/c5cd9a6ec41ea51b585128c4704c38]
+Jan-11 02:53:33.907 [Task submitter] INFO  nextflow.Session - [c6/2a317c] Submitted process > task_cycles (19)
+Jan-11 02:53:33.935 [Task submitter] INFO  nextflow.Session - [90/774fb4] Submitted process > task_fertilizer_increase_cycles (19)
+Jan-11 02:53:34.153 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 46; name: task_baseline_cycles (46); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a6/d7833d07010b81dd7e96c9dc571bc1]
+Jan-11 02:53:34.192 [Task submitter] INFO  nextflow.Session - [6d/20d5c6] Submitted process > task_fertilizer_increase_cycles (20)
+Jan-11 02:53:34.219 [Task submitter] INFO  nextflow.Session - [48/64d96c] Submitted process > task_cycles (20)
+Jan-11 02:53:35.276 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 41; name: task_baseline_cycles (41); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/75/bfd4da31fe44e633119e9dcf401dfd]
+Jan-11 02:53:35.316 [Task submitter] INFO  nextflow.Session - [69/dc7e09] Submitted process > task_cycles (21)
+Jan-11 02:53:35.345 [Task submitter] INFO  nextflow.Session - [6c/a8e087] Submitted process > task_fertilizer_increase_cycles (21)
+Jan-11 02:53:35.472 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 44; name: task_baseline_cycles (44); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/5f/0c8fb5c1b8d92417a1dc5973d17525]
+Jan-11 02:53:35.514 [Task submitter] INFO  nextflow.Session - [a4/135c6b] Submitted process > task_cycles (22)
+Jan-11 02:53:35.542 [Task submitter] INFO  nextflow.Session - [e8/49e3eb] Submitted process > task_fertilizer_increase_cycles (22)
+Jan-11 02:53:35.666 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 35; name: task_baseline_cycles (35); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/dd/0a65f6296701d53a1bdb74fa434378]
+Jan-11 02:53:35.714 [Task submitter] INFO  nextflow.Session - [38/a4b5ff] Submitted process > task_cycles (23)
+Jan-11 02:53:35.739 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 47; name: task_baseline_cycles (47); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/73/e6741403a9d4a70fd88363d29f50d8]
+Jan-11 02:53:35.743 [Task submitter] INFO  nextflow.Session - [11/6a5a9c] Submitted process > task_fertilizer_increase_cycles (23)
+Jan-11 02:53:35.775 [Task submitter] INFO  nextflow.Session - [4b/f759c8] Submitted process > task_cycles (24)
+Jan-11 02:53:35.801 [Task submitter] INFO  nextflow.Session - [ec/468be9] Submitted process > task_fertilizer_increase_cycles (24)
+Jan-11 02:53:37.785 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 38; name: task_baseline_cycles (38); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/e8/a6fc4e4ff1c3981ce1b56adb28e188]
+Jan-11 02:53:37.822 [Task submitter] INFO  nextflow.Session - [fb/26992b] Submitted process > task_cycles (25)
+Jan-11 02:53:37.853 [Task submitter] INFO  nextflow.Session - [51/7d64ac] Submitted process > task_fertilizer_increase_cycles (25)
+Jan-11 02:53:37.882 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 40; name: task_baseline_cycles (40); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/5a/8a462c6b80a28165d8dfe6874b682e]
+Jan-11 02:53:37.945 [Task submitter] INFO  nextflow.Session - [66/e5062c] Submitted process > task_fertilizer_increase_cycles (26)
+Jan-11 02:53:37.954 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 37; name: task_baseline_cycles (37); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/0a/cf55d4ecc10a100f775c2e193fba80]
+Jan-11 02:53:37.977 [Task submitter] INFO  nextflow.Session - [6d/234902] Submitted process > task_cycles (26)
+Jan-11 02:53:38.004 [Task submitter] INFO  nextflow.Session - [b8/ee9ae5] Submitted process > task_fertilizer_increase_cycles (27)
+Jan-11 02:53:38.031 [Task submitter] INFO  nextflow.Session - [d7/82dd66] Submitted process > task_cycles (27)
+Jan-11 02:53:38.166 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 50; name: task_cycles (1); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/d7/0f06b50f5615c1fe4167a7b2dcb934]
+Jan-11 02:53:38.704 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 49; name: task_fertilizer_increase_cycles (1); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/2d/971580b56ec2c46f8b0249d9cce1c8]
+Jan-11 02:53:38.942 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 57; name: task_fertilizer_increase_cycles (5); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/4f/6be7d69c84dd6f9d06806e6b71506f]
+Jan-11 02:53:39.001 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 58; name: task_cycles (5); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/02/9e5868416225c1021133fcd86f653c]
+Jan-11 02:53:39.150 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 61; name: task_fertilizer_increase_cycles (7); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/29/ca19d8036d133400245e491eb3a317]
+Jan-11 02:53:39.227 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 63; name: task_cycles (8); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/53/b137efcb2affddde73e016757072b4]
+Jan-11 02:53:39.661 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 12; name: task_baseline_cycles (12); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/29/ed7084ca4e0663e19fb5bc98800764]
+Jan-11 02:53:39.707 [Task submitter] INFO  nextflow.Session - [41/c9242e] Submitted process > task_fertilizer_increase_cycles (28)
+Jan-11 02:53:39.754 [Task submitter] INFO  nextflow.Session - [a9/7baecf] Submitted process > task_cycles (28)
+Jan-11 02:53:39.780 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 18; name: task_baseline_cycles (18); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/54/fd35d3878f8258b0bf3904764507ce]
+Jan-11 02:53:39.839 [Task submitter] INFO  nextflow.Session - [54/ebe16d] Submitted process > task_cycles (29)
+Jan-11 02:53:39.868 [Task submitter] INFO  nextflow.Session - [f1/1a83ac] Submitted process > task_fertilizer_increase_cycles (29)
+Jan-11 02:53:39.919 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 24; name: task_baseline_cycles (24); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/ad/616bfca233b9051cf7902c49776430]
+Jan-11 02:53:39.966 [Task submitter] INFO  nextflow.Session - [3e/ed4165] Submitted process > task_cycles (30)
+Jan-11 02:53:40.001 [Task submitter] INFO  nextflow.Session - [34/2559cb] Submitted process > task_fertilizer_increase_cycles (30)
+Jan-11 02:53:40.025 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 16; name: task_baseline_cycles (16); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/90/3604cb3f370abffb6ad37fbf3cca77]
+Jan-11 02:53:40.077 [Task submitter] INFO  nextflow.Session - [0d/59fbbf] Submitted process > task_cycles (31)
+Jan-11 02:53:40.104 [Task submitter] INFO  nextflow.Session - [21/9b2f26] Submitted process > task_fertilizer_increase_cycles (31)
+Jan-11 02:53:40.156 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 21; name: task_baseline_cycles (21); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/bf/ec0b9b2bc67c98d1dd2412faa94e8d]
+Jan-11 02:53:40.190 [Task submitter] INFO  nextflow.Session - [a3/045bc9] Submitted process > task_cycles (32)
+Jan-11 02:53:40.226 [Task submitter] INFO  nextflow.Session - [3a/1a3eed] Submitted process > task_fertilizer_increase_cycles (32)
+Jan-11 02:53:40.305 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 34; name: task_baseline_cycles (34); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/5c/168f052d113d728b537853df9cd945]
+Jan-11 02:53:40.342 [Task submitter] INFO  nextflow.Session - [59/06be9b] Submitted process > task_cycles (33)
+Jan-11 02:53:40.375 [Task submitter] INFO  nextflow.Session - [f0/ab85c3] Submitted process > task_fertilizer_increase_cycles (33)
+Jan-11 02:53:49.660 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 51; name: task_cycles (2); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a3/1ce8b1540c7eb7ddb16119a47898ba]
+Jan-11 02:53:50.298 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 52; name: task_fertilizer_increase_cycles (2); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/cd/5e5715dfe0e89f388596afec8f217f]
+Jan-11 02:53:50.450 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 59; name: task_cycles (6); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/7a/1a3773d8ee7e793b2a638c34741547]
+Jan-11 02:54:00.061 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 86; name: task_cycles (19); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/c6/2a317ca3b2138bd52153bb57732af4]
+Jan-11 02:54:09.597 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: task_baseline_cycles (4); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/c6/7caeab5eef8d7841e308d9c226c9e1]
+Jan-11 02:54:09.673 [Task submitter] INFO  nextflow.Session - [56/0840b2] Submitted process > task_cycles (34)
+Jan-11 02:54:09.704 [Task submitter] INFO  nextflow.Session - [24/130caa] Submitted process > task_fertilizer_increase_cycles (34)
+Jan-11 02:54:09.708 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: task_baseline_cycles (8); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a8/5e7a26d5f49826c8ff0112b0fb8be0]
+Jan-11 02:54:09.747 [Task submitter] INFO  nextflow.Session - [f1/0f86de] Submitted process > task_cycles (35)
+Jan-11 02:54:09.777 [Task submitter] INFO  nextflow.Session - [97/0a1f93] Submitted process > task_fertilizer_increase_cycles (35)
+Jan-11 02:54:09.893 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 32; name: task_baseline_cycles (32); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/17/dd473620b37091f0aed8fdbf0e8c30]
+Jan-11 02:54:09.930 [Task submitter] INFO  nextflow.Session - [d5/653a9e] Submitted process > task_fertilizer_increase_cycles (36)
+Jan-11 02:54:09.974 [Task submitter] INFO  nextflow.Session - [2d/eb27d3] Submitted process > task_cycles (36)
+Jan-11 02:54:10.035 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 29; name: task_baseline_cycles (29); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/19/f3c80dade06968630500f5e5044007]
+Jan-11 02:54:10.071 [Task submitter] INFO  nextflow.Session - [2a/02242f] Submitted process > task_fertilizer_increase_cycles (37)
+Jan-11 02:54:10.094 [Task submitter] INFO  nextflow.Session - [48/6249f1] Submitted process > task_cycles (37)
+Jan-11 02:54:10.114 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: task_baseline_cycles (5); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/34/3b016957a049477bc5288881f9cfff]
+Jan-11 02:54:10.149 [Task submitter] INFO  nextflow.Session - [a3/55f1c5] Submitted process > task_cycles (38)
+Jan-11 02:54:10.177 [Task submitter] INFO  nextflow.Session - [30/9cb9f0] Submitted process > task_fertilizer_increase_cycles (38)
+Jan-11 02:54:10.184 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: task_baseline_cycles (6); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/00/e31ea9b4467eddaecbf3ab13042c9b]
+Jan-11 02:54:10.221 [Task submitter] INFO  nextflow.Session - [3a/665e8a] Submitted process > task_fertilizer_increase_cycles (39)
+Jan-11 02:54:10.247 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 27; name: task_baseline_cycles (27); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/d4/17e7f676b7bc759558915b7b89d782]
+Jan-11 02:54:10.248 [Task submitter] INFO  nextflow.Session - [9c/e181ff] Submitted process > task_cycles (39)
+Jan-11 02:54:10.286 [Task submitter] INFO  nextflow.Session - [0d/365695] Submitted process > task_fertilizer_increase_cycles (40)
+Jan-11 02:54:10.316 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 20; name: task_baseline_cycles (20); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/b7/6c902f3c9812268a38ded3e63e0fef]
+Jan-11 02:54:10.319 [Task submitter] INFO  nextflow.Session - [77/478893] Submitted process > task_cycles (40)
+Jan-11 02:54:10.351 [Task submitter] INFO  nextflow.Session - [d4/ba4290] Submitted process > task_cycles (41)
+Jan-11 02:54:10.367 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: task_baseline_cycles (7); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a7/2eb6bfbb9edb27fd7acb6019fb78d5]
+Jan-11 02:54:10.379 [Task submitter] INFO  nextflow.Session - [d2/bd95ee] Submitted process > task_fertilizer_increase_cycles (41)
+Jan-11 02:54:10.407 [Task submitter] INFO  nextflow.Session - [ed/c09318] Submitted process > task_cycles (42)
+Jan-11 02:54:10.438 [Task submitter] INFO  nextflow.Session - [01/d4ef5f] Submitted process > task_fertilizer_increase_cycles (42)
+Jan-11 02:54:10.446 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 22; name: task_baseline_cycles (22); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/f7/8af532e535d31cddc466cc05884ab9]
+Jan-11 02:54:10.480 [Task submitter] INFO  nextflow.Session - [a8/2e7370] Submitted process > task_cycles (43)
+Jan-11 02:54:10.504 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 17; name: task_baseline_cycles (17); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/aa/80557df4b4fdf0829e3604a75a4e82]
+Jan-11 02:54:10.507 [Task submitter] INFO  nextflow.Session - [ea/6fd871] Submitted process > task_fertilizer_increase_cycles (43)
+Jan-11 02:54:10.536 [Task submitter] INFO  nextflow.Session - [8e/5ed85b] Submitted process > task_fertilizer_increase_cycles (44)
+Jan-11 02:54:10.563 [Task submitter] INFO  nextflow.Session - [61/f70e94] Submitted process > task_cycles (44)
+Jan-11 02:54:10.565 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 23; name: task_baseline_cycles (23); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/6a/1bc2049fbabceebcf65792190a6783]
+Jan-11 02:54:10.603 [Task submitter] INFO  nextflow.Session - [a8/a47239] Submitted process > task_fertilizer_increase_cycles (45)
+Jan-11 02:54:10.625 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 14; name: task_baseline_cycles (14); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/fa/52a5ce4332f747da704722da5e7b73]
+Jan-11 02:54:10.627 [Task submitter] INFO  nextflow.Session - [99/3551ae] Submitted process > task_cycles (45)
+Jan-11 02:54:10.656 [Task submitter] INFO  nextflow.Session - [ed/7fae61] Submitted process > task_fertilizer_increase_cycles (46)
+Jan-11 02:54:10.680 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: task_baseline_cycles (11); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/7c/342b5d43fc71f0f91d5e9bf493d0c1]
+Jan-11 02:54:10.681 [Task submitter] INFO  nextflow.Session - [f8/ae6234] Submitted process > task_cycles (46)
+Jan-11 02:54:10.746 [Task submitter] INFO  nextflow.Session - [76/a38044] Submitted process > task_fertilizer_increase_cycles (47)
+Jan-11 02:54:10.771 [Task submitter] INFO  nextflow.Session - [ba/797bbe] Submitted process > task_cycles (47)
+Jan-11 02:54:10.881 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 13; name: task_baseline_cycles (13); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/06/6d06ac18b4bcc9fa984378f7f84c2d]
+Jan-11 02:54:10.912 [Task submitter] INFO  nextflow.Session - [30/c2bf49] Submitted process > task_fertilizer_increase_cycles (48)
+Jan-11 02:54:10.938 [Task submitter] INFO  nextflow.Session - [55/bb0d6d] Submitted process > task_cycles (48)
+Jan-11 02:54:10.952 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 53; name: task_fertilizer_increase_cycles (3); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/ca/feca92ee742e411b13732a8ed5fe72]
+Jan-11 02:54:11.019 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 54; name: task_cycles (3); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/1a/d20a992dcb5b5499ea558c157f3008]
+Jan-11 02:54:11.110 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 55; name: task_fertilizer_increase_cycles (4); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/ad/2ee6d315d2d1698f206d1dd8b877be]
+Jan-11 02:54:11.236 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 56; name: task_cycles (4); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a4/d028dd6a79adf092871428f0f3ece2]
+Jan-11 02:54:11.362 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 60; name: task_fertilizer_increase_cycles (6); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/19/249e6a3149ebd96dfc6ef1d50bff78]
+Jan-11 02:54:11.480 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 70; name: task_fertilizer_increase_cycles (11); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/1e/aa8bee3727b7a290edad45c4afda05]
+Jan-11 02:54:11.624 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 71; name: task_cycles (12); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/dd/7ed9dcdb69a401819e0c7bb75fc821]
+Jan-11 02:54:14.488 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 74; name: task_cycles (13); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/9b/7c51b338c2e8292143f7c877a6ef4a]
+Jan-11 02:54:14.576 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 73; name: task_fertilizer_increase_cycles (13); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/18/93119f18743f8b9710ecf6e6b17787]
+Jan-11 02:54:24.562 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 69; name: task_cycles (11); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a0/96ea30b882fa1336be42a27f2e2f8e]
+Jan-11 02:54:24.706 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 72; name: task_fertilizer_increase_cycles (12); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/76/a65cd8bd02b1770bf323a42058ab5a]
+Jan-11 02:54:29.445 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 76; name: task_cycles (14); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/36/c1da8fec174a6b09bed155d8e3c991]
+Jan-11 02:54:29.532 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 75; name: task_fertilizer_increase_cycles (14); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/8a/11a8a10f5f1816936860a9876905ed]
+Jan-11 02:54:35.253 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 115; name: task_fertilizer_increase_cycles (34); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/24/130caa6a1693c0e27f2f5ac6eefb69]
+Jan-11 02:54:54.776 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 100; name: task_fertilizer_increase_cycles (26); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/66/e5062c52397eade3ab077bf0794890]
+Jan-11 02:54:54.844 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 99; name: task_cycles (26); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/6d/234902612b224867295b88f340f565]
+Jan-11 02:54:55.303 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 116; name: task_cycles (34); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/56/0840b2f2eee71e205c6318b5bec4fa]
+Jan-11 02:54:55.379 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 117; name: task_cycles (35); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/f1/0f86de7e73de3ef319dcef20468b75]
+Jan-11 02:54:59.620 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 85; name: task_fertilizer_increase_cycles (19); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/90/774fb48dad9fca1aa954d96685ada5]
+Jan-11 02:54:59.798 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 88; name: task_fertilizer_increase_cycles (20); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/6d/20d5c6bba38b5389f2e80bc5be3ae6]
+Jan-11 02:54:59.897 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 87; name: task_cycles (20); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/48/64d96c52dae4e69ee3c6feeccae64f]
+Jan-11 02:54:59.965 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 90; name: task_cycles (21); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/69/dc7e09d4e202ea8f3d1bc9f0c1bfe8]
+Jan-11 02:55:00.030 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 89; name: task_fertilizer_increase_cycles (21); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/6c/a8e0877f342516db193d722dd27225]
+Jan-11 02:55:00.241 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 92; name: task_cycles (22); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a4/135c6b3af2d493d0f1685f6895f7bb]
+Jan-11 02:55:04.314 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 91; name: task_fertilizer_increase_cycles (22); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/e8/49e3eb6a05d46d8fa505927fc3286d]
+Jan-11 02:55:04.383 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 93; name: task_cycles (23); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/38/a4b5ffb7cebc4113b8b9eab8e0405e]
+Jan-11 02:55:04.463 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 94; name: task_fertilizer_increase_cycles (23); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/11/6a5a9c14b3c762e345d67b103f1b74]
+Jan-11 02:55:04.541 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 95; name: task_cycles (24); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/4b/f759c85ab018b9975e5cbbba1aed44]
+Jan-11 02:55:04.619 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 96; name: task_fertilizer_increase_cycles (24); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/ec/468be963ea1ca1e9de8120da3e5d55]
+Jan-11 02:55:04.699 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 97; name: task_cycles (25); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/fb/26992be2b0b611e369f2d85671a399]
+Jan-11 02:55:04.809 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 98; name: task_fertilizer_increase_cycles (25); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/51/7d64ac72d3ed7140f8c08264daa608]
+Jan-11 02:55:04.896 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 101; name: task_cycles (27); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/d7/82dd6682ebb7d34aaf1470ccb33d53]
+Jan-11 02:55:05.155 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 113; name: task_fertilizer_increase_cycles (33); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/f0/ab85c3c7ba473e71ab9961fd4e0da6]
+Jan-11 02:55:05.582 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 142; name: task_fertilizer_increase_cycles (47); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/76/a3804433473d39c040b978e0161a75]
+Jan-11 02:55:05.628 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 141; name: task_cycles (47); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/ba/797bbef223441df44b571476f326b3]
+Jan-11 02:55:05.720 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 77; name: task_cycles (15); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/1c/2e2126c0243b568ef55deb1de7ccd8]
+Jan-11 02:55:05.797 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 78; name: task_fertilizer_increase_cycles (15); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/63/af6e7246ee691b25e1edba52df447e]
+Jan-11 02:55:05.896 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 79; name: task_cycles (16); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/28/575186bd95e4bbae3694abb43d9b7f]
+Jan-11 02:55:05.976 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 80; name: task_fertilizer_increase_cycles (16); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/9d/06035efff178e845249af55f124944]
+Jan-11 02:55:06.061 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 82; name: task_fertilizer_increase_cycles (17); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/cb/061cf3973de300933dc6a54aa7dd3b]
+Jan-11 02:55:06.140 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 81; name: task_cycles (17); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/17/685f2dd2a90fcd8e2d10e3421b3550]
+Jan-11 02:55:06.212 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 83; name: task_fertilizer_increase_cycles (18); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/fe/afd964c4750fcb97fdb6f5fac4c5d2]
+Jan-11 02:55:06.279 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 84; name: task_cycles (18); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/6a/df246daed61b5503b7b961013adba3]
+Jan-11 02:55:15.750 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 105; name: task_cycles (29); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/54/ebe16d894d980563c749f59c5af890]
+Jan-11 02:55:15.790 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 106; name: task_fertilizer_increase_cycles (29); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/f1/1a83acf9f8b5787a80f60a110cee61]
+Jan-11 02:55:45.863 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 118; name: task_fertilizer_increase_cycles (35); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/97/0a1f932622e7612974b668ffaf30e9]
+Jan-11 02:55:45.916 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 119; name: task_fertilizer_increase_cycles (36); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/d5/653a9e3ace72f7508b145648384e5f]
+Jan-11 02:55:45.969 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 120; name: task_cycles (36); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/2d/eb27d3f817fb2cebff4bee63df8071]
+Jan-11 02:55:46.024 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 122; name: task_fertilizer_increase_cycles (37); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/2a/02242f6d2b28f5a829696d64e9bc28]
+Jan-11 02:55:46.072 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 121; name: task_cycles (37); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/48/6249f1e59a1ed0285b577863c6e8c0]
+Jan-11 02:55:46.122 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 124; name: task_cycles (38); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a3/55f1c5e09781c692d0acfb10608e70]
+Jan-11 02:55:46.174 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 123; name: task_fertilizer_increase_cycles (38); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/30/9cb9f09704aeecad20754ed5dd3f1b]
+Jan-11 02:55:46.219 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 125; name: task_fertilizer_increase_cycles (39); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/3a/665e8ac729ebc55f3f73f2b0e0c93f]
+Jan-11 02:55:46.273 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 126; name: task_cycles (39); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/9c/e181ff7be4f8f0f4db07aa38357778]
+Jan-11 02:55:46.320 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 127; name: task_fertilizer_increase_cycles (40); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/0d/365695ed2eaf95b65d2e7bdf417067]
+Jan-11 02:55:46.366 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 128; name: task_cycles (40); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/77/47889317df177c91d4bf1ac28370d9]
+Jan-11 02:55:46.414 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 130; name: task_cycles (41); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/d4/ba42901dd7d0b9a6ae2f24d076bf9d]
+Jan-11 02:55:46.461 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 129; name: task_fertilizer_increase_cycles (41); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/d2/bd95ee5e9044cd3e0dfaf0fea0c5cf]
+Jan-11 02:55:46.507 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 131; name: task_cycles (42); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/ed/c09318ba921d6a4dc024d8b0bf512c]
+Jan-11 02:55:46.559 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 132; name: task_fertilizer_increase_cycles (42); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/01/d4ef5fbacf317aeccc606ccd238cc6]
+Jan-11 02:55:46.603 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 134; name: task_cycles (43); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a8/2e737006f5f9423122c844b9e2b550]
+Jan-11 02:55:46.654 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 133; name: task_fertilizer_increase_cycles (43); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/ea/6fd8714d899e83c182e05788c73349]
+Jan-11 02:55:46.699 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 135; name: task_fertilizer_increase_cycles (44); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/8e/5ed85b2d0cb281238869dd18596ff3]
+Jan-11 02:55:46.759 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 136; name: task_cycles (44); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/61/f70e949180b6701c69e10a83b3eb7e]
+Jan-11 02:55:46.805 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 137; name: task_fertilizer_increase_cycles (45); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a8/a472399adb8004059b445dc70006a7]
+Jan-11 02:55:46.884 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 139; name: task_cycles (46); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/f8/ae62341ea6648a201b8b10b7673469]
+Jan-11 02:55:46.935 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 144; name: task_fertilizer_increase_cycles (48); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/30/c2bf49881a67ab873f898c0209b9c5]
+Jan-11 02:55:46.990 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 143; name: task_cycles (48); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/55/bb0d6d957c2b2cb693263c832aaa9f]
+Jan-11 02:55:55.251 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 102; name: task_fertilizer_increase_cycles (27); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/b8/ee9ae5427026a532b1e7f49fb27669]
+Jan-11 02:55:55.306 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 103; name: task_fertilizer_increase_cycles (28); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/41/c9242e00fc12227840f6f557c5d094]
+Jan-11 02:55:55.355 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 104; name: task_cycles (28); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a9/7baecf0083e87bf3d56f18bc62fd8e]
+Jan-11 02:55:55.405 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 108; name: task_cycles (30); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/3e/ed4165694d5d73cd6b6dfe9a181288]
+Jan-11 02:55:55.451 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 107; name: task_fertilizer_increase_cycles (30); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/34/2559cbe6f17a0029acfdf2399809ad]
+Jan-11 02:55:55.498 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 110; name: task_cycles (31); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/0d/59fbbf260f2bb75978dd9f1d17034b]
+Jan-11 02:55:55.545 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 109; name: task_fertilizer_increase_cycles (31); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/21/9b2f261ca6ee9327987a1d977d2e5a]
+Jan-11 02:55:55.589 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 111; name: task_cycles (32); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a3/045bc932d1147477c42c7922ee270d]
+Jan-11 02:55:55.632 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 112; name: task_fertilizer_increase_cycles (32); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/3a/1a3eede0853d3c6cdeb5edde125efb]
+Jan-11 02:55:55.680 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 114; name: task_cycles (33); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/59/06be9b238418044552c7f1f15e19c4]
+Jan-11 02:55:55.726 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 138; name: task_cycles (45); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/99/3551aee6d12052439e384a2ae22327]
+Jan-11 02:55:55.731 [Task submitter] INFO  nextflow.Session - [4b/543e02] Submitted process > task_cycles_output_summary (1)
+Jan-11 02:55:55.778 [Task submitter] INFO  nextflow.Session - [2e/8fb8f9] Submitted process > task_cycles_output_summary (2)
+Jan-11 02:55:55.785 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 140; name: task_fertilizer_increase_cycles (46); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/ed/7fae61f2089f338a6526d447ab8438]
+Jan-11 02:55:55.844 [Task submitter] INFO  nextflow.Session - [ec/db01d9] Submitted process > task_cycles_fertilizer_increase_output_parser (4)
+Jan-11 02:55:55.875 [Task submitter] INFO  nextflow.Session - [6c/b1ee4e] Submitted process > task_cycles_fertilizer_increase_output_parser (1)
+Jan-11 02:55:55.905 [Task submitter] INFO  nextflow.Session - [b7/0a8e16] Submitted process > task_cycles_fertilizer_increase_output_parser (6)
+Jan-11 02:55:55.964 [Task submitter] INFO  nextflow.Session - [32/cf8440] Submitted process > task_cycles_fertilizer_increase_output_parser (2)
+Jan-11 02:55:55.993 [Task submitter] INFO  nextflow.Session - [09/52eb56] Submitted process > task_cycles_fertilizer_increase_output_parser (5)
+Jan-11 02:55:56.023 [Task submitter] INFO  nextflow.Session - [c0/e65a7e] Submitted process > task_cycles_fertilizer_increase_output_parser (7)
+Jan-11 02:55:56.062 [Task submitter] INFO  nextflow.Session - [74/088ca1] Submitted process > task_cycles_fertilizer_increase_output_parser (3)
+Jan-11 02:55:56.094 [Task submitter] INFO  nextflow.Session - [3b/f3d085] Submitted process > task_cycles_fertilizer_increase_output_parser (10)
+Jan-11 02:55:56.133 [Task submitter] INFO  nextflow.Session - [18/4f282b] Submitted process > task_cycles_fertilizer_increase_output_parser (17)
+Jan-11 02:55:56.169 [Task submitter] INFO  nextflow.Session - [f6/3ed377] Submitted process > task_cycles_fertilizer_increase_output_parser (9)
+Jan-11 02:55:56.224 [Task submitter] INFO  nextflow.Session - [1c/a15587] Submitted process > task_cycles_fertilizer_increase_output_parser (24)
+Jan-11 02:55:56.270 [Task submitter] INFO  nextflow.Session - [b4/9c7b4f] Submitted process > task_cycles_fertilizer_increase_output_parser (8)
+Jan-11 02:55:56.302 [Task submitter] INFO  nextflow.Session - [e8/b20764] Submitted process > task_cycles_fertilizer_increase_output_parser (25)
+Jan-11 02:55:56.331 [Task submitter] INFO  nextflow.Session - [2a/32e804] Submitted process > task_cycles_fertilizer_increase_output_parser (26)
+Jan-11 02:55:56.360 [Task submitter] INFO  nextflow.Session - [7a/1d2f57] Submitted process > task_cycles_fertilizer_increase_output_parser (28)
+Jan-11 02:55:56.399 [Task submitter] INFO  nextflow.Session - [f6/83d6c1] Submitted process > task_cycles_fertilizer_increase_output_parser (15)
+Jan-11 02:55:56.436 [Task submitter] INFO  nextflow.Session - [b4/28ef8a] Submitted process > task_cycles_fertilizer_increase_output_parser (20)
+Jan-11 02:55:56.485 [Task submitter] INFO  nextflow.Session - [11/768bfc] Submitted process > task_cycles_fertilizer_increase_output_parser (22)
+Jan-11 02:55:56.556 [Task submitter] INFO  nextflow.Session - [51/32ba1a] Submitted process > task_cycles_fertilizer_increase_output_parser (27)
+Jan-11 02:55:56.642 [Task submitter] INFO  nextflow.Session - [00/3f02ea] Submitted process > task_cycles_fertilizer_increase_output_parser (33)
+Jan-11 02:55:56.725 [Task submitter] INFO  nextflow.Session - [96/718d2e] Submitted process > task_cycles_fertilizer_increase_output_parser (31)
+Jan-11 02:55:56.833 [Task submitter] INFO  nextflow.Session - [54/cc2ba5] Submitted process > task_cycles_fertilizer_increase_output_parser (34)
+Jan-11 02:55:56.947 [Task submitter] INFO  nextflow.Session - [44/6c55b4] Submitted process > task_cycles_fertilizer_increase_output_parser (14)
+Jan-11 02:55:57.031 [Task submitter] INFO  nextflow.Session - [80/502546] Submitted process > task_cycles_fertilizer_increase_output_parser (11)
+Jan-11 02:55:57.121 [Task submitter] INFO  nextflow.Session - [c3/38a8c6] Submitted process > task_cycles_fertilizer_increase_output_parser (12)
+Jan-11 02:55:57.208 [Task submitter] INFO  nextflow.Session - [f8/0d9a3a] Submitted process > task_cycles_fertilizer_increase_output_parser (39)
+Jan-11 02:55:57.298 [Task submitter] INFO  nextflow.Session - [77/5f5087] Submitted process > task_cycles_fertilizer_increase_output_parser (43)
+Jan-11 02:55:57.420 [Task submitter] INFO  nextflow.Session - [c3/629c15] Submitted process > task_cycles_fertilizer_increase_output_parser (13)
+Jan-11 02:55:57.513 [Task submitter] INFO  nextflow.Session - [08/e2add7] Submitted process > task_cycles_fertilizer_increase_output_parser (19)
+Jan-11 02:55:57.638 [Task submitter] INFO  nextflow.Session - [7d/7a3830] Submitted process > task_cycles_fertilizer_increase_output_parser (18)
+Jan-11 02:55:57.723 [Task submitter] INFO  nextflow.Session - [2b/a4c376] Submitted process > task_cycles_fertilizer_increase_output_parser (21)
+Jan-11 02:55:57.832 [Task submitter] INFO  nextflow.Session - [21/97f046] Submitted process > task_cycles_fertilizer_increase_output_parser (48)
+Jan-11 02:55:57.909 [Task submitter] INFO  nextflow.Session - [dd/07b218] Submitted process > task_cycles_fertilizer_increase_output_parser (45)
+Jan-11 02:55:58.047 [Task submitter] INFO  nextflow.Session - [40/8220c0] Submitted process > task_cycles_fertilizer_increase_output_parser (16)
+Jan-11 02:55:58.170 [Task submitter] INFO  nextflow.Session - [bd/1df117] Submitted process > task_cycles_fertilizer_increase_output_parser (47)
+Jan-11 02:55:58.351 [Task submitter] INFO  nextflow.Session - [c5/e047f0] Submitted process > task_cycles_fertilizer_increase_output_parser (30)
+Jan-11 02:55:58.556 [Task submitter] INFO  nextflow.Session - [46/5a7a50] Submitted process > task_cycles_fertilizer_increase_output_parser (37)
+Jan-11 02:55:58.680 [Task submitter] INFO  nextflow.Session - [a5/e15739] Submitted process > task_cycles_fertilizer_increase_output_parser (32)
+Jan-11 02:55:58.814 [Task submitter] INFO  nextflow.Session - [b2/febad8] Submitted process > task_cycles_fertilizer_increase_output_parser (23)
+Jan-11 02:55:58.963 [Task submitter] INFO  nextflow.Session - [b3/c1bccc] Submitted process > task_cycles_fertilizer_increase_output_parser (36)
+Jan-11 02:55:59.107 [Task submitter] INFO  nextflow.Session - [58/70dbb3] Submitted process > task_cycles_fertilizer_increase_output_parser (35)
+Jan-11 02:55:59.293 [Task submitter] INFO  nextflow.Session - [ff/1f9b25] Submitted process > task_cycles_fertilizer_increase_output_parser (38)
+Jan-11 02:55:59.371 [Task submitter] INFO  nextflow.Session - [46/600d13] Submitted process > task_cycles_fertilizer_increase_output_parser (29)
+Jan-11 02:55:59.500 [Task submitter] INFO  nextflow.Session - [a5/863ef4] Submitted process > task_cycles_fertilizer_increase_output_parser (44)
+Jan-11 02:55:59.627 [Task submitter] INFO  nextflow.Session - [bb/6e1980] Submitted process > task_cycles_fertilizer_increase_output_parser (40)
+Jan-11 02:55:59.761 [Task submitter] INFO  nextflow.Session - [5d/4e3e88] Submitted process > task_cycles_fertilizer_increase_output_parser (41)
+Jan-11 02:55:59.885 [Task submitter] INFO  nextflow.Session - [94/3ce4ba] Submitted process > task_cycles_fertilizer_increase_output_parser (46)
+Jan-11 02:56:00.069 [Task submitter] INFO  nextflow.Session - [4e/1f3b8c] Submitted process > task_cycles_fertilizer_increase_output_parser (42)
+Jan-11 02:56:01.587 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 147; name: task_cycles_fertilizer_increase_output_parser (1); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/6c/b1ee4e1c536580a0ef4fbb8cf4ba45]
+Jan-11 02:56:02.094 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 152; name: task_cycles_fertilizer_increase_output_parser (6); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/b7/0a8e165f6fa8faad76aa0146d3e252]
+Jan-11 02:56:02.876 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 148; name: task_cycles_fertilizer_increase_output_parser (2); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/32/cf84403b72e8308d23ffceeeb3680c]
+Jan-11 02:56:03.337 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 151; name: task_cycles_fertilizer_increase_output_parser (5); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/09/52eb5633f8af00fb0736ef8a504575]
+Jan-11 02:56:03.899 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 153; name: task_cycles_fertilizer_increase_output_parser (7); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/c0/e65a7eee754b0d34c633ac2ff7ff3a]
+Jan-11 02:56:04.298 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 149; name: task_cycles_fertilizer_increase_output_parser (3); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/74/088ca1a3b9bd5a572fa1e9ef67ac46]
+Jan-11 02:56:04.709 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 156; name: task_cycles_fertilizer_increase_output_parser (10); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/3b/f3d0851fe8a1cdc4e98763dc9ed71c]
+Jan-11 02:56:05.154 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 163; name: task_cycles_fertilizer_increase_output_parser (17); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/18/4f282bf21ebbf3146164ae2319523a]
+Jan-11 02:56:05.589 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 155; name: task_cycles_fertilizer_increase_output_parser (9); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/f6/3ed377af999c463d5023cc21600091]
+Jan-11 02:56:05.980 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 170; name: task_cycles_fertilizer_increase_output_parser (24); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/1c/a155870aabf92cc70e830136b19698]
+Jan-11 02:56:06.648 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 171; name: task_cycles_fertilizer_increase_output_parser (25); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/e8/b207646559185025eb14e4518ef66d]
+Jan-11 02:56:07.152 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 172; name: task_cycles_fertilizer_increase_output_parser (26); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/2a/32e80414e8d4023e91dc500ac34cbd]
+Jan-11 02:56:07.572 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 174; name: task_cycles_fertilizer_increase_output_parser (28); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/7a/1d2f579ef45219177a57c9c515e8e2]
+Jan-11 02:56:08.035 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 161; name: task_cycles_fertilizer_increase_output_parser (15); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/f6/83d6c111a440755db2185b1a98d42d]
+Jan-11 02:56:08.567 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 166; name: task_cycles_fertilizer_increase_output_parser (20); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/b4/28ef8ac6fffb5011ae30a98be065a1]
+Jan-11 02:56:09.064 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 168; name: task_cycles_fertilizer_increase_output_parser (22); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/11/768bfc2d34da6c8461797bf7b3d04f]
+Jan-11 02:56:09.575 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 173; name: task_cycles_fertilizer_increase_output_parser (27); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/51/32ba1a6c2fd13d68ba2472016d0b8e]
+Jan-11 02:56:10.033 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 179; name: task_cycles_fertilizer_increase_output_parser (33); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/00/3f02ea8f2d2c2d319292686f4a6779]
+Jan-11 02:56:10.516 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 177; name: task_cycles_fertilizer_increase_output_parser (31); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/96/718d2ea51543d412b8ca55adb7583b]
+Jan-11 02:56:10.894 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 180; name: task_cycles_fertilizer_increase_output_parser (34); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/54/cc2ba544f471055bafd59706c4fcf8]
+Jan-11 02:56:11.672 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 157; name: task_cycles_fertilizer_increase_output_parser (11); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/80/5025469fbc0e7b38da4f00a3b44247]
+Jan-11 02:56:12.474 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 185; name: task_cycles_fertilizer_increase_output_parser (39); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/f8/0d9a3a2bb0b1d492d5dc4c4f500802]
+Jan-11 02:56:12.935 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 189; name: task_cycles_fertilizer_increase_output_parser (43); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/77/5f50878f716c177104282196c0d77e]
+Jan-11 02:56:13.376 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 159; name: task_cycles_fertilizer_increase_output_parser (13); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/c3/629c15874cfeb28496b214819855b9]
+Jan-11 02:56:13.829 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 165; name: task_cycles_fertilizer_increase_output_parser (19); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/08/e2add77771c1386dbdd554c5e65ffd]
+Jan-11 02:56:14.221 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 164; name: task_cycles_fertilizer_increase_output_parser (18); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/7d/7a3830e982f08c7b9292977c3bbf0c]
+Jan-11 02:56:14.806 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 167; name: task_cycles_fertilizer_increase_output_parser (21); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/2b/a4c3768c61fe664cd04c19ca65ba3d]
+Jan-11 02:56:15.526 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 191; name: task_cycles_fertilizer_increase_output_parser (45); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/dd/07b21875d6bde4b311e3c2905dd2dc]
+Jan-11 02:56:16.211 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 162; name: task_cycles_fertilizer_increase_output_parser (16); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/40/8220c06356dec85d819c6ad4cbb20e]
+Jan-11 02:56:16.966 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 193; name: task_cycles_fertilizer_increase_output_parser (47); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/bd/1df117c96ad577b730a26be6370f1a]
+Jan-11 02:56:17.551 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 176; name: task_cycles_fertilizer_increase_output_parser (30); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/c5/e047f01aca92cfc6b7acc92c4c0166]
+Jan-11 02:56:18.484 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 183; name: task_cycles_fertilizer_increase_output_parser (37); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/46/5a7a5082e79f2bd6992b7c7bc1bfe8]
+Jan-11 02:56:19.209 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 178; name: task_cycles_fertilizer_increase_output_parser (32); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a5/e15739daa715db093a3606a6f2a969]
+Jan-11 02:56:19.806 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 169; name: task_cycles_fertilizer_increase_output_parser (23); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/b2/febad824a220ea36098fef1a80df0a]
+Jan-11 02:56:20.280 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 182; name: task_cycles_fertilizer_increase_output_parser (36); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/b3/c1bccc43c9c74c5e1d64bbbe5825d1]
+Jan-11 02:56:20.843 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 181; name: task_cycles_fertilizer_increase_output_parser (35); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/58/70dbb310d05d10f5d06b05729b1f82]
+Jan-11 02:56:21.460 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 184; name: task_cycles_fertilizer_increase_output_parser (38); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/ff/1f9b2549a05d29a3c6430de151efb8]
+Jan-11 02:56:22.026 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 175; name: task_cycles_fertilizer_increase_output_parser (29); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/46/600d13aafc4023c3de38b6c59815b9]
+Jan-11 02:56:22.801 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 190; name: task_cycles_fertilizer_increase_output_parser (44); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/a5/863ef4ad31d0cdbd698de935a74636]
+Jan-11 02:56:23.593 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 186; name: task_cycles_fertilizer_increase_output_parser (40); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/bb/6e1980fbcccc95e791b964a49d93c6]
+Jan-11 02:56:24.951 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 192; name: task_cycles_fertilizer_increase_output_parser (46); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/94/3ce4ba2fc79c3b6b5a99ad42f894d5]
+Jan-11 02:56:25.570 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 188; name: task_cycles_fertilizer_increase_output_parser (42); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/4e/1f3b8c4fc1146398abd9df105ceb5a]
+Jan-11 02:56:26.320 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 150; name: task_cycles_fertilizer_increase_output_parser (4); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/ec/db01d993da67e0354487abce906a66]
+Jan-11 02:56:46.005 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 154; name: task_cycles_fertilizer_increase_output_parser (8); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/b4/9c7b4fd1bbb4dc80e78bd9208b960d]
+Jan-11 02:57:05.915 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 160; name: task_cycles_fertilizer_increase_output_parser (14); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/44/6c55b476bdd9dc1ae7ffbb5e7e967b]
+Jan-11 02:57:05.970 [Task submitter] INFO  nextflow.Session - [1e/1aff10] Submitted process > task_cycles_fertilizer_increase_output_summary (1)
+Jan-11 02:57:10.713 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor k8s > tasks to be completed: 6 -- submitted tasks are shown below
+~> TaskHandler[id: 145; name: task_cycles_output_summary (1); status: SUBMITTED; exit: -; error: -; workDir: /input/data/work/4b/543e028f48771e6db5cbe3c67658a1]
+~> TaskHandler[id: 146; name: task_cycles_output_summary (2); status: SUBMITTED; exit: -; error: -; workDir: /input/data/work/2e/8fb8f985809ce69a40f82ca853bdd0]
+~> TaskHandler[id: 158; name: task_cycles_fertilizer_increase_output_parser (12); status: SUBMITTED; exit: -; error: -; workDir: /input/data/work/c3/38a8c68d3c6dfb89c80f1c0c00fef4]
+~> TaskHandler[id: 194; name: task_cycles_fertilizer_increase_output_parser (48); status: SUBMITTED; exit: -; error: -; workDir: /input/data/work/21/97f04624cc812296cc5e526da1c094]
+~> TaskHandler[id: 187; name: task_cycles_fertilizer_increase_output_parser (41); status: SUBMITTED; exit: -; error: -; workDir: /input/data/work/5d/4e3e88fba7eb65eee53deb0c3add56]
+~> TaskHandler[id: 195; name: task_cycles_fertilizer_increase_output_summary (1); status: SUBMITTED; exit: -; error: -; workDir: /input/data/work/1e/1aff1056c8e5d81357a6fa2a321447]
+Jan-11 02:57:30.986 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 187; name: task_cycles_fertilizer_increase_output_parser (41); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/5d/4e3e88fba7eb65eee53deb0c3add56]
+Jan-11 02:57:31.099 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 195; name: task_cycles_fertilizer_increase_output_summary (1); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/1e/1aff1056c8e5d81357a6fa2a321447]
+Jan-11 02:58:05.812 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 158; name: task_cycles_fertilizer_increase_output_parser (12); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/c3/38a8c68d3c6dfb89c80f1c0c00fef4]
+Jan-11 02:58:25.832 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 194; name: task_cycles_fertilizer_increase_output_parser (48); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/21/97f04624cc812296cc5e526da1c094]
+Jan-11 02:58:25.887 [Task submitter] INFO  nextflow.Session - [56/00c6de] Submitted process > task_cycles_fertilizer_increase_output_summary (2)
+Jan-11 02:58:45.832 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 196; name: task_cycles_fertilizer_increase_output_summary (2); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/56/00c6de67fcbd5ba323a125c3d88522]
+Jan-11 03:01:10.786 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 146; name: task_cycles_output_summary (2); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/2e/8fb8f985809ce69a40f82ca853bdd0]
+Jan-11 03:01:10.832 [Task submitter] INFO  nextflow.Session - [5e/fd2549] Submitted process > task_cycles_plots (1)
+Jan-11 03:01:20.764 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 145; name: task_cycles_output_summary (1); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/4b/543e028f48771e6db5cbe3c67658a1]
+Jan-11 03:01:20.808 [Task submitter] INFO  nextflow.Session - [ed/79b2e6] Submitted process > task_cycles_plots (2)
+Jan-11 03:01:40.780 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 197; name: task_cycles_plots (1); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/5e/fd25493b8908602e57b3aa902108b8]
+Jan-11 03:02:00.773 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 198; name: task_cycles_plots (2); status: COMPLETED; exit: 0; error: -; workDir: /input/data/work/ed/79b2e6137bcd709555a1ffb8d3bd49]
+Jan-11 03:02:00.774 [main] DEBUG nextflow.Session - Session await > all processes finished
+Jan-11 03:02:00.780 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jan-11 03:02:00.791 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=198; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=1h 55m 39s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=54; peakCpus=54; peakMemory=294.6 GB; ]
+Jan-11 03:02:00.791 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Jan-11 03:02:00.792 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Jan-11 03:02:01.404 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+Jan-11 03:02:01.544 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Jan-11 03:02:01.570 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Jan-11 03:02:01.570 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
